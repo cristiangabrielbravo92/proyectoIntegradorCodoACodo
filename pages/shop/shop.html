@@ -29,6 +29,33 @@
     </header> 
     <!--Fin Header-->
 <aside>
+    <form>
+        <label for="buscar">BUSCAR</label><br>
+        <input type="text" id="buscar" name="buscar" placeholder="item o categoria"
+            required><br>
+        <label for="preferencia">¿Cómo preferís que se comuniquen con vos?</label>
+        <select name="preferencia" id="preferencia">
+            <option value="telefono">Por teléfono</option>
+            <option value="email">Por email</option>
+        </select><br>
+        <label for="numeroTelefono">Número de teléfono:</label><br>
+        <input type="number" id="numeroTelefono" name="numeroTelefono" required
+            placeholder="Del titular, sin espacios ni guiones"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required placeholder="Cualquier dirección en la que se puedan comunicar con vos"><br>
+        <label for="preferencia">¿Cómo preferís que se comuniquen con vos?</label>
+        <select name="preferencia" id="preferencia">
+            <option value="telefono">Por teléfono</option>
+            <option value="email">Por email</option>
+        </select><br>
+        <label for="descripcion">Descripción:</label><br>
+        <textarea id="descripcion" name="descripcion" required
+            placeholder="Detallando el problema y los mensajes de errores."></textarea><br>
+        <label for="capturas">Capturas de pantalla:</label><br>
+        <input type="file" id="capturas" name="capturas" placeholder="Si tenés capturas, anexalas"><br>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
 
 </aside>
 
