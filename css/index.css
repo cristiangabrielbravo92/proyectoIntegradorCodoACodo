@@ -18,7 +18,11 @@
     --dark-900: rgba(31, 31, 31, 0.9);
     --dark-500: rgba(31, 31, 31, 0.5);
     --dark-300: rgba(31, 31, 31, 0.3);
-    --light-font-solid: #ffffff; 
+   
+    --dark-bg-solid: #30343F;
+    --light-bg-solid: #FAFAFF;
+    --light-font-solid: #FFFFFF;
+
 
 
 
@@ -88,7 +92,62 @@ p {
 
 }
 
+img {
+    width: 100%;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+
+
+/* ---------------*/
+/* --- Header --- */
+/* ---------------*/
+
+header {
+    background-color: var(--dark-bg-solid);
+    padding: var(--spacing-36);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar__logo {
+    max-width: 300px;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-20);
+
+}
+
+.navbar__link {
+    font-size: var(--font-medium);
+    padding: var(--spacing-8) var(--spacing-16);
+    display: inline-block;
+    transition: background .3s ease-in-out;
+
+}
+
+.navbar__link:hover {
+    background-color: var(--primary-900);
+
+}
+
+
+.with-icon {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8)
+}
+
+/* Hasta acá son 32:26 en el video mission #2*/
