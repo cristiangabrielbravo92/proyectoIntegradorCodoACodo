@@ -187,6 +187,7 @@ header {
 .hero {
     background-image: url(../img/funkos-banner.webp);
     padding: var(--spacin-128);
+    padding-left: var(--spacing-36);
     background-position: top;
     background-size: cover;
     background-attachment: fixed;
@@ -255,6 +256,8 @@ header {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas miti y miti para que la imagen ocupe la mitad del bloque*/
     align-items: center;
     padding: var(--spacing-16) 0;
+    padding-left: var(--spacing-36);
+    padding-right: var(--spacing-36);
 }
 
 .collection:nth-child(2) .collection__cover { /* agarra el segundo item de las colecciones*/
@@ -309,6 +312,8 @@ header {
     flex-direction: column;
     gap: var(--spacing-36);
     margin: var(--spacing-68) auto;
+    padding-left: var(--spacing-36);
+    padding-right: var(--spacing-36);
 
 }
 
@@ -397,7 +402,13 @@ header {
 .footer {
     background-color: var(--dark-bg-solid);
     padding: var(--spacing-68);
+    padding-left: var(--spacing-36);
+    padding-right: var(--spacing-36);
 
+}
+
+.footer .navbar__link {
+    padding-left: 0; /* Sino el padding que se comparte con .navbar__link del header hace que el texto esté más hacia el centro */
 }
 
 .footer__copy {
