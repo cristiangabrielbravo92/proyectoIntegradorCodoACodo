@@ -152,10 +152,57 @@ header {
 
 form {
     padding: var(--spacing-36);
+    font-family: var(--base-font);
+  /*   display: flex;
+    gap: var(--spacing-36);
+    flex-direction: column; */
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid var(--primary-solid); 
+}
+
+textarea {
+    height: 195px;
+    width: 830px;
+    border-radius: 5px;
+    font-size: var(--font-medium);
+    font-weight: 400;
+    color: var(--secondary-solid);
+    padding: var(--spacing-8);
+
+
+}
+
+.createForm__title {
+    font-size: var(--font-display);
+    font-weight: 700;
+    color: var(--dark-solid);
+}
+
+.createForm__label {
+    font-size: var(--font-large);
+    font-weight: 300;
+    color: var(--dark-solid);
+}
+
+.createForm__select {
+    font-size: var(--font-medium);
+    font-weight: 500;
+    color: var(--secondary-solid);
+
 }
 
 
+.createForm__input {
+    font-size: var(--font-medium);
+    font-weight: 400;
+    color: var(--secondary-solid);
+    border-bottom: 2px solid var(--primary-solid); /* la línea esa que aparece abajo del texto */
+    padding-bottom: 0.5rem; /* para que la línea esté un poco separada del texto */
 
+}
 
 
 
