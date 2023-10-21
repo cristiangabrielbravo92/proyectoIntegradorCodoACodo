@@ -92,14 +92,15 @@ p {
 
 }
 
-img {
-    width: 100%;
-}
+
+
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+
 
 
 
@@ -188,29 +189,92 @@ textarea {
 }
 
 .createForm__select {
+    font-family: var(--base-font);
+    font-size: var(--font-medium);
     font-size: var(--font-medium);
     font-weight: 500;
-    color: var(--secondary-solid);
+    color: var(--dark-solid);
+    height: 45px;
+    width: 245px;
+    
+}
 
+.createForm__selectLarge {
+    font-family: var(--base-font);
+    font-size: var(--font-medium);
+    font-size: var(--font-medium);
+    font-weight: 500;
+    color: var(--dark-solid);
+    height: 45px;
+    width: 345px;
+    
 }
 
 
-.createForm__input {
+.createForm_input {
+    text-align: center;
+    width: auto;
+    max-width: 300px;
+    overflow: scroll;
     font-size: var(--font-medium);
     font-weight: 400;
     color: var(--secondary-solid);
     border-bottom: 2px solid var(--primary-solid); /* la línea esa que aparece abajo del texto */
     padding-bottom: 0.5rem; /* para que la línea esté un poco separada del texto */
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
 
 }
 
+.createForm__insertFiles {
+    border: none;
+}
 
+.createForm__Preview {
+    display: flex;
+    gap: 25px;
+    flex-direction: row;
+}
 
+.createForm__PreviewFront, .createForm__PreviewBack {
+    width: 150px;
+    height: 175px;
+    text-align: center;
+    display: inline-block;
+}
 
+.createForm__Preview p {
+    font-size: var(--font-medium);
+    font-family: var(--alternative-font);
+    font-weight: 500;
 
+}
+.createForm__imgPreview {
+    width: 150px;
+    height: 150px;
+    border-bottom: 2px solid var(--primary-solid);
+}
 
+.createForm__imgPreview img {
+    width: 100%;
+    height: 100%;
+}
 
+.createForm__buttons {
+    display: flex;
+    gap: 25px;
+    flex-direction: row;
+}
 
+.createForm__submitButton, .createForm__clearButton {
+    height: 45px;
+    width: 175px;
+    text-align: center;
+    font-family: var(--base-font);
+    font-size: var(--font-xsmall);
+    color: var(--light-font-solid);
+    background-color: var(--primary-solid);
+}
 
 
 /* ---------------*/
