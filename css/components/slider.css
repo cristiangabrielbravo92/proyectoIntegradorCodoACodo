@@ -16,17 +16,21 @@
 }
 
 iconify-icon {
-    color: var(--bg-dark-solid);
+    color: var(--dark-solid);
     font-size: var(--font-small);
     font-weight: 700;
 }
 
 .glide__arrow--left {
     left: 0;
+    position: absolute;
+    display: block;
+    top: 50%;
+    z-index: 2;
 
 }
 
 .glide__arrow--right {
     right: 0;
-    
+
 }
