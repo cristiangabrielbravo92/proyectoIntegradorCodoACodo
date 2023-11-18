@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop | Funko Shop</title>
+    <link rel="stylesheet" href="../../css/index.css">
 </head>
 
 <body>
@@ -13,16 +14,16 @@
         <nav>
             <picture>
                 <a href="../index.html">
-                    <img src="../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop">
+                    <img src="../../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop">
                 </a>
             </picture>
 
             <ul>
                 <li><a href="./shop.html">SHOP</a></li>
-                <li><a href="../pages/contact.html">CONTACTO</a></li>
-                <li><a href="../pages/login.html">LOGIN</a></li>
-                <li><a href="../pages/cart.html">
-                    <img src="../img/icons/cart-icon.svg" alt="icono de carrito"></img>
+                <li><a href="./contact.html">CONTACTO</a></li>
+                <li><a href="../admin/login.html">LOGIN</a></li>
+                <li><a href="./cart.html">
+                    <img src="../../img/icons/cart-icon.svg" alt="icono de carrito"></img>
                 </a></li>
             </ul>
         </nav>
@@ -30,137 +31,111 @@
     <!--Fin Header-->
 <aside>
     <form>
-        <label for="buscar">BUSCAR</label><br>
-        <input type="text" id="buscar" name="buscar" placeholder="item o categoria"
-            required><br>
-        <label for="preferencia">¿Cómo preferís que se comuniquen con vos?</label>
-        <select name="preferencia" id="preferencia">
-            <option value="telefono">Por teléfono</option>
-            <option value="email">Por email</option>
-        </select><br>
-        <label for="numeroTelefono">Número de teléfono:</label><br>
-        <input type="number" id="numeroTelefono" name="numeroTelefono" required
-            placeholder="Del titular, sin espacios ni guiones"><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required placeholder="Cualquier dirección en la que se puedan comunicar con vos"><br>
-        <label for="preferencia">¿Cómo preferís que se comuniquen con vos?</label>
-        <select name="preferencia" id="preferencia">
-            <option value="telefono">Por teléfono</option>
-            <option value="email">Por email</option>
-        </select><br>
-        <label for="descripcion">Descripción:</label><br>
-        <textarea id="descripcion" name="descripcion" required
-            placeholder="Detallando el problema y los mensajes de errores."></textarea><br>
-        <label for="capturas">Capturas de pantalla:</label><br>
-        <input type="file" id="capturas" name="capturas" placeholder="Si tenés capturas, anexalas"><br>
-        <br>
-        <input type="submit" value="Enviar">
+        <div>
+            <label for="search">BUSCAR</label>
+            <input type="text" name="search" id="search" placeholder="Ítem o categoría">
+        </div>
+        <div>
+            <label for="orderby">ORDERNAR POR: </label>
+            <select name="orderby" id="orderby">
+                <option value="priceAsc">Precio: Más baratos primero</option>
+                <option value="priceDesc">Precio: Más caros primero</option>
+                <option value="az">Alfabético: A-Z</option>
+                <option value="za">Alfabético: Z-A</option>
+            </select>
+        </div>
+        <div>
+            <span>PRECIO</span>
+            <label for="min">MIN</label>
+            <input type="text" name="min" id="min" placeholder="0">
+            <label for="max">- MAX</label>
+            <input type="text" name="max" id="max" placeholder="99999">
+        </div>
+        <div>
+            <span for="filter">FILTRAR</span>
+            <input type="checkbox" name="filter" id="newcomers" value="newcomers">
+            <label for="">NUEVOS</label>
+            <input type="checkbox" name="filter" id="offers" value="offers">
+            <label for="">OFERTAS</label>
+            <input type="checkbox" name="filter" id="specials" value="specials">
+            <label for="">EDICIÓN ESPECIAL</label>
+            <input type="checkbox" name="filter" id="favs" value="favs">
+            <label for="">FAVORITOS</label>
+        </div>
+
     </form>
 
 </aside>
 
 <main>
-<!--
-<section> 
-<article>  
-    <h3>Nuevos Ingresos</h3>
-    <p>Descubrí el próximo Funko Pop de tu colección</p>
-    <a href="./pages/shop.html">SHOP</a>
-</article>    
-</section>
 <section>
     <article>
-        <h3>Star Wars & The Mandalorian</h3>
-    <p>Disfruta de una saga que sigue agregando personajes a su colección.</p>
-    <a href="">VER COLECCIÓN</a>
+        <a href="">
+            <picture>
+                <img src="../../img/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de un Stormtrooper">
+            </picture>
+            <div>
+                <p>STAR WARS</p>
+                <h4>STORMTROOPER LIGHTSABER</h4>
+                <p>$ 1799,99</p>
+                <p>3 CUOTAS SIN INTERÉS</p>
+            </div>
+        </a>
     </article>
-    <picture>
-        <img src="./img/star-wars/baby-yoda-1.webp" alt="Figura coleccionable de Grogu de la serie The Mandalorian"></img>
-    </picture>
-</section>
-<section>
+
     <article>
-        <h3>POKEMON INDIGO</h3>
-    <p>Atrapa todos los que puedas y disfruta de una colección llena de amigos.</p>
-    <a href="">VER COLECCIÓN</a>
+        <a href="">
+            <picture>
+                <img src="../../img/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko de Pidgeotto">
+            </picture>
+            <div>
+                <p>POKEMON</p>
+                <h4>PIDGEOTTO</h4>
+                <p>$ 1799,99</p>
+                <p>3 CUOTAS SIN INTERÉS</p>
+            </div>
+        </a>
     </article>
-    <picture>
-        <img src="./img/pokemon/vulpix-1.webp" alt="Figura coleccionable de Vulpix de la serie Pokemon"></img>
-    </picture>
-</section>
-<section>
+
     <article>
-        <h3>HARRY POTTER</h3>
-    <p>Revive los recuerdos de una saga llena de magia y encanto.</p>
-    <a href="">VER COLECCIÓN</a>
+        <a href="">
+            <picture>
+                <img src="../../img/harry-potter/luna-1.webp" alt="Figura coleccionable Funko de Luna Lovegood">
+            </picture>
+            <div>
+                <p>HARRY POTTER</p>
+                <h4>LUNA LOVEGOOD LION MASK</h4>
+                <p>$ 1799,99</p>
+                <p>3 CUOTAS SIN INTERÉS</p>
+            </div>
+        </a>
     </article>
-    <picture>
-        <img src="./img/harry-potter/snape-patronus-1.webp" alt="Figura coleccionable del Patronus de Snape "></img>
-    </picture>
 </section>
 <section>
-    <h2>Últimos Lanzamientos</h2>
-    <ul>
-        <li>
-            <article>
-                <a href="">
-                    <picture>
-                        <img src="./img/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de un Stormtrooper">
-                    </picture>
-                    <div>
-                        <p>STAR WARS</p>
-                        <h4>STORMTROOPER LIGHTSABER</h4>
-                        <p>$ 1799,99</p>
-                        <p>3 CUOTAS SIN INTERÉS</p>
-                    </div>
-                </a>
-            </article>
-        </li>
-        <li>
-            <article>
-                <a href="">
-                    <picture>
-                        <img src="./img/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko de Pidgeotto">
-                    </picture>
-                    <div>
-                        <p>POKEMON</p>
-                        <h4>PIDGEOTTO</h4>
-                        <p>$ 1799,99</p>
-                        <p>3 CUOTAS SIN INTERÉS</p>
-                    </div>
-                </a>
-            </article>
-        </li>
-        <li>
-            <article>
-                <a href="">
-                    <picture>
-                        <img src="./img/harry-potter/luna-1.webp" alt="Figura coleccionable Funko de Luna Lovegood">
-                    </picture>
-                    <div>
-                        <p>HARRY POTTER</p>
-                        <h4>LUNA LOVEGOOD LION MASK</h4>
-                        <p>$ 1799,99</p>
-                        <p>3 CUOTAS SIN INTERÉS</p>
-                    </div>
-                </a>
-            </article>
-        </li>
-    </ul>
-</section>
--->
+            <div>
+                <button type="button"><</button>
+                <button type="button">1</button>
+                <button type="button">2</button>
+                <button type="button">3</button>
+                <button type="button">4</button>
+                <button type="button">5</button>
+                <button type="button">></button>
+            </div>
+        </section>
+
 </main>
+
 <footer>
     <section>
         <nav>
             <ul>
                 <li><a href="./shop.html">SHOP</a></li>
-                <li><a href="../pages/login.html">INGRESAR</a></li>
-                <li><a href="../pages/contact.html">CONTACTO</a></li>
+                <li><a href="../admin/login.html">INGRESAR</a></li>
+                <li><a href="./contact.html">CONTACTO</a></li>
             </ul>
 
             <picture>
-                <img src="../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop"></img>
+                <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop"></img>
             </picture>
         </nav>
         <picture></picture>
