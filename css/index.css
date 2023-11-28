@@ -19,13 +19,6 @@
 @import url('./partes/footer.css');
 
 
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-
 /* --- PÁGINAS --- */
 /* --- Página Home --- */
 @import url('./pages/home.css');

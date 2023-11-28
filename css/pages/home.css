@@ -3,7 +3,7 @@
 /* ---------------*/
 /* averiguar porque se llama hero */ 
 .hero {
-    background-image: url(../img/funkos-banner.webp);
+    background-image: url(../../img/funkos-banner.webp);
     padding: var(--spacin-128);
     padding-left: var(--spacing-36);
     background-position: top;
