@@ -1,0 +1,20 @@
+/* ---------------*/
+/* --- Footer --- */
+/* ---------------*/
+
+.footer {
+    background-color: var(--dark-bg-solid);
+    padding: var(--spacing-68);
+    padding-left: var(--spacing-36);
+    padding-right: var(--spacing-36);
+
+}
+
+.footer .navbar__link {
+    padding-left: 0; /* Sino el padding que se comparte con .navbar__link del header hace que el texto esté más hacia el centro */
+}
+
+.footer__copy {
+    margin-top: var(--spacing-36);
+    text-align: center;
+}
