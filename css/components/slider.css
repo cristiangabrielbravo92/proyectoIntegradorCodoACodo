@@ -19,16 +19,20 @@ iconify-icon {
     color: var(--dark-bg-solid);
     font-size: var(--font-small);
     font-weight: 700;
+    background-color: var(--light-bg-solid);
 }
 
 .glide__arrow--left {
     left: 0;
     color: var(--dark-bg-solid);
+    /* background-color: var(--light-bg-solid); */
 
 }
 
 .glide__arrow--right {
     right: 0;
     color: var(--dark-bg-solid);
+    /* background-color: var(--light-bg-solid); */
 
 }
+

@@ -73,3 +73,10 @@ header {
 .submenu__link:hover {
     background-color: var(--primary-900);
 }
+
+.navbar__link iconify-icon {
+    color: var(--light-bg-solid);
+    font-size: var(--font-small);
+    font-weight: 700;
+    
+}

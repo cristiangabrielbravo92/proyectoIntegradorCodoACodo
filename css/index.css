@@ -19,11 +19,16 @@
 @import url('./partes/footer.css');
 
 
-/* --- PÁGINAS --- */
+/* --- PÁGINAS SHOP --- */
 /* --- Página Home --- */
 @import url('./pages/home.css');
+
+
+/* --- PÁGINAS Admin --- */
 /* --- Páginas Create y Edit --- */
 @import url(./pages/create.css);
+/* --- Página Admin --- */
+@import url(./pages/admin.css);
 
 
 
@@ -113,7 +118,7 @@
     background-color: var(--primary-solid);
   }
 
-
+ 
 /* ---------------------------*/
 /* --- Media Queries Rebe --- */
 /* ---------------------------*/

@@ -32,69 +32,73 @@
     </header> 
     <!--Fin Header-->
 
+<!----------------->
+<!-- Inicio Main -->
+<!----------------->
+
 <main class="container">
-    <section class="search__bar">
-        <label class="search__barLabel" for="search__query">
-            <img class="search__iconoLupa" src="../../img/icons/search_icon.svg" alt="search_icon"></label>
-        <input class="search__bar-input" type="text" name="search__query" id="search__query" placeholder="Código, nombre o categoría">
+    <section class="searchBar">
+        <label class="searchBar__label" for="search__query">
+            <img class="searchBar__iconoLupa" src="../../img/icons/search_icon.svg" alt="search_icon"></label>
+        <input class="searchBar__input" type="text" name="search__query" id="search__query" placeholder="Código, nombre o categoría">
     </section>
-    <section>
-        <div>
+    <section class="productTable">
+        <div class="productTable__title">
             <h2>LISTADO DE PRODUCTOS</h2>
-            <span>AGREGAR<a href="./create.html">+</a></span>
+            <span>AGREGAR<a href="./create.html"><iconify-icon icon="bxs:plus-square"></iconify-icon></a></span>
         </div>
-        <div>
-            <header>
-                <h3>ID</h3>
-                <h3>Código</h3>
-                <h3>Nombre del Producto</h3>
-                <h3>Categoría</h3>
-            </header>
-            <article>
-                <p>1</p>
-                <p>STW001001</p>
-                <p>Baby Yoda Blueball</p>
-                <p>Figura Coleccionable</p>
-                <a href=""><img src="../../img/icons/edit_pencil.svg" alt="Icono de editar"></a>
-                <a href=""><img src="../../img/icons/delete_trash.svg" alt="Icono de eliminar"></a>
-            </article>
-            <article>
-                <p>2</p>
-                <p>STW001002</p>
-                <p>Boba Fett Fighter</p>
-                <p>Figura Coleccionable</p>
-                <a href=""><img src="../../img/icons/edit_pencil.svg" alt="Icono de editar"></a>
-                <a href=""><img src="../../img/icons/delete_trash.svg" alt="Icono de eliminar"></a>
-            </article>
-            <article>
-                <p>3</p>
-                <p>STW001003</p>
-                <p>Luke Skylwalker & Grogu</p>
-                <p>Figura Coleccionable</p>
-                <a href=""><img src="../../img/icons/edit_pencil.svg" alt="Icono de editar"></a>
-                <a href=""><img src="../../img/icons/delete_trash.svg" alt="Icono de eliminar"></a>
-            </article>
-            <article>
-                <p>4</p>
-                <p>STW001004</p>
-                <p>Stormtrooper Lightsaber</p>
-                <p>Figura Coleccionable</p>
-                <a href=""><img src="../../img/icons/edit_pencil.svg" alt="Icono de editar"></a>
-                <a href=""><img src="../../img/icons/delete_trash.svg" alt="Icono de eliminar"></a>
-            </article>
+        <div class="productTable__header">
+            <h3>ID</h3>
+            <h3>Código</h3>
+            <h3>Nombre del Producto</h3>
+            <h3>Categoría</h3>
         </div>
+        <article class="productTable__row">
+            <p>1</p>
+            <p>STW001001</p>
+            <p>Baby Yoda Blueball</p>
+            <p>Figura Coleccionable</p>
+            <a href=""><img src="../../img/icons/edit_pencil.svg" alt="Icono de editar"></a>
+            <a href=""><img src="../../img/icons/delete_trash.svg" alt="Icono de eliminar"></a>
+        </article>
+        <article class="productTable__row">
+            <p>2</p>
+            <p>STW001002</p>
+            <p>Boba Fett Fighter</p>
+            <p>Figura Coleccionable</p>
+            <a href=""><img src="../../img/icons/edit_pencil.svg" alt="Icono de editar"></a>
+            <a href=""><img src="../../img/icons/delete_trash.svg" alt="Icono de eliminar"></a>
+        </article>
+        <article class="productTable__row">
+            <p>3</p>
+            <p>STW001003</p>
+            <p>Luke Skylwalker & Grogu</p>
+            <p>Figura Coleccionable</p>
+            <a href=""><img src="../../img/icons/edit_pencil.svg" alt="Icono de editar"></a>
+            <a href=""><img src="../../img/icons/delete_trash.svg" alt="Icono de eliminar"></a>
+        </article>
+        <article class="productTable__row">
+            <p>4</p>
+            <p>STW001004</p>
+            <p>Stormtrooper Lightsaber</p>
+            <p>Figura Coleccionable</p>
+            <a href=""><img src="../../img/icons/edit_pencil.svg" alt="Icono de editar"></a>
+            <a href=""><img src="../../img/icons/delete_trash.svg" alt="Icono de eliminar"></a>
+        </article>
+
+
+
+
+
     </section>
-
-
-
-
-
-
-
-
+   
 
 
 </main>
+
+<!-------------->
+<!-- Fin Main -->
+<!-------------->
 
 <footer class="footer">
     <nav class="navbar container">
@@ -116,7 +120,7 @@
 
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
     
 
 </body>
