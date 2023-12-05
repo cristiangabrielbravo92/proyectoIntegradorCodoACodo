@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
@@ -14,5 +15,6 @@ app.use('/admin', adminRoutes);
 app.use('/auth/', authRoutes);
 
 
+PORT = process.env.NODEPORT;
 
-app.listen(4000, () => console.log(`Servidor corriendo en http://localhost:4000`));
+app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
