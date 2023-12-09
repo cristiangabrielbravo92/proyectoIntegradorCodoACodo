@@ -1,0 +1,55 @@
+<%- include('./partials/header.ejs') %>
+    <section class="hero">
+        <article class="hero__content  container">
+          <h3 class="hero__title">Nuevos Ingresos</h3>
+          <p class="hero__text">Descubrí el próximo Funko Pop de tu colección</p>
+          <a class="hero__link" href="shop">SHOP</a>
+        </article>
+    </section>
+    <main class="container">
+        <section class="row align-items-center mobile-collection">
+            <picture class="col-12 col-sm-6 d-block d-sm-none">
+                <img src="assets/img/star-wars/baby-yoda-1.webp" alt="Figura de Baby Yoda" />
+            </picture>
+            <article class="col-12 col-sm-6 mobile-collection">
+                 <h3 class="collection__title mb-3">Star Wars &The Mandalorian</h3>
+                 <p class="collection__text mb-3">Disfruta de una saga que sigue agregando personajes a su colección.</p>
+                 <a class="collection__link mb-3 d-inline-block" href="shop/items?search=Star Wars">VER COLECCIÓN</a>
+            </article>
+            <picture class="col-12 col-sm-6 d-none d-sm-block">
+                <img src="assets/img/star-wars/baby-yoda-1.webp" alt="Figura de Baby Yoda" />
+            </picture>
+        </section>
+        <section class="row align-items-center mobile-collection">
+            <picture class="col-12 col-sm-6 d-none d-sm-block">
+                <img src="assets/img/pokemon/vulpix-1.webp" alt="Figura de vulpix" />
+            </picture>
+            <article class="col-12 col-sm-6 order-1 mobile-collection">
+                 <h3 class="collection__title mb-3">POKEMON INDIGO</h3>
+                 <p class="collection__text mb-3">Atrapa todos los que puedas y disfruta de una colección llena de amigos.</p>
+                 <a class="collection__link mb-3" href="shop/items?search=pokemon">VER COLECCIÓN</a>
+            </article>
+            <picture class="col-12 col-sm-6 d-sm-none">
+                <img src="assets/img/pokemon/vulpix-1.webp" alt="Figura de vulpix" />
+            </picture>
+        
+        </section>
+        <section class="row align-items-center mobile-collection">
+            <picture class="col-12 col-sm-6  d-block d-sm-none">
+                <img src="assets/img/harry-potter/snape-patronus-1.webp" alt="Figura de Snape Patronus" />
+            </picture>
+            <article class="col-12 col-sm-6 mobile-collection">
+                 <h3 class="collection__title mb-3">HARRY POTTER</h3>
+                 <p class="collection__text mb-3">Revive los recuerdos de una saga llena de magia y encanto</p>
+                 <a class="collection__link mb-3" href="shop/items?search=Harry Potter">VER COLECCIÓN</a>
+            </article>
+            <picture class="col-12 col-sm-6  d-none d-sm-block">
+                <img src="assets/img/harry-potter/snape-patronus-1.webp" alt="Figura de Snape Patronus" />
+            </picture>
+        </section>
+        <div class="mt-4">
+            <%- include('./components/slider.ejs', { items: items }) %>
+        </div>
+
+    </main>
+    <%- include('./partials/footer.ejs') %>

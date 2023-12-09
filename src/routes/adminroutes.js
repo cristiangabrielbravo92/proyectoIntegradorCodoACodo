@@ -1,17 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const uploadFiles = require('../middlewares/uploadFiles');
-const { isLogged } = require('../middlewares/login');
-const adminControllers = require('../controllers/adminController');
+const mainController = require('../controllers/mainController');
 
-router.use(isLogged);
+router.get('/', mainController.admin);
 
-router.get('/', adminControllers.admin);
-router.get('/create', adminControllers.create);
-router.post('/create', uploadFiles.array('images', 2), adminControllers.createItem);
-router.get('/edit/:id', adminControllers.edit);
-router.put('/edit/:id', adminControllers.editItem);
-router.delete('/delete/:id', adminControllers.deleteItem);
+router.get('/productList', mainController.poductList);
+
+router.get('/create/', mainController.getAdminCreate);
+
+//router.post('/create/',mainController.postAdminCreate);
+
+router.get('/edit/', mainController.getAdminEditById);
+
+//router.get('/edit/:id', mainController.getAdminEditById); luego ponerle el id
+
+//router.put('/edit/:id', mainController.putAdminEditById);
+
+//router.delete('/delete/:id', mainController.deleteAdmById);
 
 
 module.exports = router;

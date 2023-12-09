@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Item | FunkoShop </title>
+  <link rel="icon" type="image/x-icon" href="../favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../create.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar container">
+      <picture class="navbar__logo">
+        <a href="../index.html">
+          <img class="navbar__logo__desk" src="../assets/img/branding/logo_light_horizontal.svg" alt="Logo de Funkos" />
+          <img class="navbar__logo__mobile" src="../assets/img/branding/logo_mobile.png" alt="Logo de Funkos" />
+        </a>
+      </picture>
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a class="navbar__link" href="#">VER TIENDA</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" href="#">ADMIN</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" href="../index.html">SALIR</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-container">
+    <section class="container">
+
+        <form class="createForm" action="" method="post" enctype="multipart/form-data">
+            <h3 class="createForm__title">EDITAR ITEM</h3>
+            <label class="createForm__label" for="categoria">Categoría:</label>
+            <!-- seguro la lista de categorías se traiga de una columna de la base de datos y se inyecte desde JS pero por ahora puse de ejemplo estas 3 -->
+            <select class="createForm__select" name="categoria" id="categoria" placeholder="Seleccionar" required>
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="funkos">Funkos</option>
+                <option value="remeras">Remeras</option>
+                <option value="llaveros">Llaveros</option>
+            </select>
+            <label class="createForm__label" for="licencia">Licencia:</label>
+            <!-- seguro la lista de categorías se traiga de una columna de la base de datos y se inyecte desde JS pero por ahora puse de ejemplo estas 3 -->
+            <select class="createForm__select" name="licencia" id="licencia" placeholder="Seleccionar" required>
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="star-wars">Star Wars</option>
+                <option value="harry-potter">Harry Potter</option>
+                <option value="pokemon">Pokémon</option>
+            </select>
+            <br>
+            <label class="createForm__label" for="nombre">Nombre del producto:</label>
+            <input class="createForm_input" type="text" name="nombre" id="nombre"
+                placeholder="Ingresar el nombre del producto">
+            <br>
+            <textarea name="SKU" id="SKU" placeholder="Descripción del producto"></textarea>
+            <br>
+            <label class="createForm__label" for="SKU">SKU:</label>
+            <input class="createForm_input" type="text" name="SKU" id="SKU" placeholder="SSK111AB001">
+            <label class="createForm__label" for="precio">Precio:</label>
+            <input class="createForm_input" type="text" name="precio" id="precio" placeholder="$ 0.000,00">
+            <label class="createForm__label" for="stock">Stock:</label>
+            <input class="createForm_input" type="text" name="stock" id="stock" placeholder="0">
+            <br>
+            <label class="createForm__label" for="descuento">Descuento:</label>
+            <input class="createForm_input" type="text" name="descuento" id="descuento" placeholder="0%">
+            <label class="createForm__label" for="cuotas">Coutas:</label>
+            <select class="createForm__selectLarge" name="cuotas" id="cuotas" required>
+                <option value="cuotas3">3 Cuotas sin interés</option>
+                <option value="cuotas6">6 cuotas</option>
+                <option value="cuotas12">12 cuotas</option>
+            </select>
+            <br>
+            <label class="createForm__label" for="imagenes">Imágenes:</label>
+            <input class="createForm__insertFiles" type="file" name="imagen" id="imagen" accept="image/*">
+            <br>
+
+            <section class="createForm__Preview">
+
+                <div class="createForm__PreviewFront">
+                    <picture class="createForm__imgPreview"><img src="../assets/img/harry-potter/harry-1.webp" alt=""></picture>
+        <p>Frente</p>
+    </div>
+
+    <div class="createForm__PreviewBack">
+        <picture class="createForm__imgPreview"><img src=" ../assets/img/harry-potter/harry-box.webp" alt=""></picture>
+                    <p>Dorso</p>
+                </div>
+            </section>
+
+            <br>
+
+            <br>
+            <input class="createForm__submitButton" type="submit" value="Modificar Producto">
+
+
+        </form>
+
+
+
+
+    </section>
+</main>
+
+ 
+<footer class="footer">
+  <nav class="navbar container">
+    <ul class="navbar__item__footer">
+      <li class="navbar__item__footer">
+        <a class="navbar__link__footer" href="#">SHOP</a>
+      </li>
+      <li>
+        <a class="navbar__link__footer" href="./register.html">REGISTRARSE</a>
+      </li>
+      <li>
+        <a class="navbar__link__footer" href="./login.html">LOGIN</a>
+      </li>
+      <li>
+        <a class="navbar__link__footer" href="#">CONTACTO</a>
+      </li>
+    </ul>
+    <picture>
+      <a href="index.html">
+        <img class="navbar__logo__desk" src="../assets/img/branding/isotype.svg" alt="Logo de Funkos" />
+
+      </a>
+    </picture>
+  </nav>
+  <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+</script>
+</body>
+
+</html>

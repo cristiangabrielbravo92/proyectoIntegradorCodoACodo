@@ -1,0 +1,91 @@
+<%- include('./partials/header.ejs') %>
+    <main class="container">
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 input-group w-50 mt-3">
+                            <span class="input-group-text" id="basic-addon1"><iconify-icon icon="material-symbols:search" style="font-size: 24px;"></iconify-icon></span>
+                            <input type="text" class="form-control"  placeholder="Buscar..." aria-describedby="basic-addon1">    
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="col-12 col-lg-6">
+                            <h4 class="form_login__title text-start text-uppercase fw-bold pt-0">Listado de Productos</h4>
+                        </div>
+                        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-end">
+                            <div class="d-flex align-items-center">
+                                <a class="text-decoration-none" href="create" target="_blank">
+                                    <span class="form_login__label text-uppercase fw-bold">Agregar</span>
+                                    <button class="btn btn-primary rounded-0 ms-2 mb-1"><iconify-icon icon="mdi:add-bold"></iconify-icon></button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="table-responsive">
+                        <table class="table table-borderless">
+                            <thead class="form_login__label">
+                                <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Código</th>
+                                <th scope="col">Nombre del Producto</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="datos_tabla">
+                                <tr>
+                                <th scope="row">1</th>
+                                <td>STW001001</td>
+                                <td>Baby Yoda Blueball</td>
+                                <td>STAR WARS</td>
+                                <td>
+                                    <a class="text-decoration-none" href="edit" target="_blank">
+                                        <iconify-icon icon="ic:round-edit" class="icon_table_edit"></iconify-icon> 
+                                    </a>
+                                </td>
+                                <td><iconify-icon icon="material-symbols-light:delete"  class="icon_table_delete"></iconify-icon></td>
+                                </tr>
+                                <tr>
+                                <th scope="row">2</th>
+                                <td>STW001002</td>
+                                <td>Boba Fett Fighter</td>
+                                <td>STAR WARS</td>
+                                <td ><iconify-icon icon="ic:round-edit" class="icon_table_edit"></iconify-icon></td>
+                                <td><iconify-icon icon="material-symbols-light:delete"  class="icon_table_delete"></iconify-icon></td>
+                                </tr>
+                                <tr>
+                                <th scope="row">3</th>
+                                <td>STW001003</td>
+                                <td>Luke Skylwalker & Grogu</td>
+                                <td>STAR WARS</td>
+                                <td ><iconify-icon icon="ic:round-edit" class="icon_table_edit"></iconify-icon></td>
+                                <td><iconify-icon icon="material-symbols-light:delete"  class="icon_table_delete"></iconify-icon></td>
+                                </tr>
+                                <tr>
+                                <th scope="row">4</th>
+                                <td>STW001004</td>
+                                <td>Stormtrooper Lightsaber</td>
+                                <td>STAR WARS</td>
+                                <td><iconify-icon icon="ic:round-edit" class="icon_table_edit"></iconify-icon></td>
+                                <td><iconify-icon icon="material-symbols-light:delete"  class="icon_table_delete"></iconify-icon></td>
+                                </tr>
+                                <tr>
+                                <th scope="row">5</th>
+                                <td>PKM001001</td>
+                                <td>Charmander Smiley</td>
+                                <td>POKEMON</td>
+                                <td><iconify-icon icon="ic:round-edit" class="icon_table_edit"></iconify-icon></td>
+                                <td><iconify-icon icon="material-symbols-light:delete"  class="icon_table_delete"></iconify-icon></td>
+                                </tr>
+            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>

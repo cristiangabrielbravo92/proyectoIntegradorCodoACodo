@@ -1,0 +1,40 @@
+<%- include('./partials/header.ejs') %>
+    <main class="container">
+        <section class="form_login">
+            <h4 class="form_login__title text-uppercase fw-bold">Crea tu cuenta</h4>
+            <p class="form_login__text">Completa el formulario para ser parte del mundo de los Funkos</p>
+             <form class="">
+                <section class="form_login__container">
+                    <div class="form_login__data">
+                        <label class="form_login__label">Nombre:</label>
+                        <input class="form_login__input" type="text" placeholder="Jhon" />
+                    </div>
+                    <div class="form_login__data">
+                        <label class="form_login__label">Apellido:</label>
+                        <input class="form_login__input" type="text" placeholder="Done" />
+                    </div>
+                    <div class="form_login__data">
+                        <label class="form_login__label">Email:</label>
+                        <input class="form_login__input" type="email" placeholder="Email" />
+                    </div>
+                    <div class="form_login__data">
+                        <label class="form_login__label">Contraseña:</label>
+                        <input class="form_login__input" type="password" placeholder="" />
+                    </div>
+                    <div class="form_login__data">
+                        <label class="form_login__label">Repita Contraseña:</label>
+                        <input class="form_login__input" type="password" placeholder="" />
+                    </div>
+                    <div class="form_login__data">
+                        <a class="form_login__data__link">Registrarse</a>
+                        <div>                        
+                            <input class="form_login__input" type="checkbox" placeholder="" />
+                            <label class="form_login__label_checkbox"><span class="form_login__span">Acepto</span> términos y condiciones</label>
+                        </div>
+                    </div>
+                </section>
+            </form>
+            
+        </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>

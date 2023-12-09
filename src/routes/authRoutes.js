@@ -1,23 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const validateInput = require('../middlewares/validator');
-const authControllers = require('../controllers/authController');
-
-const loginValidation = {
-    body(email)
-    .isEmail()
-    .withMessage('Ingrese un correo válido'),
-    body(password)
-    .isLength({min: 6})
-    .isAlphanumeric()
-    .withMessage('Ingrese una contraseña de al menos 6 caracteres que contenga letras y números.')
-};
+const mainController = require('../controllers/mainController');
 
 
-router.get('/login', authControllers.login);
-router.post('/login', loginValidation, validateInput, authControllers.loginUser);
-router.get('/register', authControllers.register);
-router.post('/register', authControllers.registerUser);
-router.get('/logout', authControllers.logout);
+router.get('/login', mainController.login);
+
+//router.post('/login',mainController.postLogin);
+
+router.get('/register', mainController.getRegister);
+
+//router.post('/register', mainController.postRegister);
+
+//router.get('/logout', mainController.logout);
 
 module.exports = router;

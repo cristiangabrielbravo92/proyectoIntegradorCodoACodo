@@ -1,34 +1,38 @@
 const mysql = require('mysql2');
-require('dotenv').config();
+// creamos una instancia de una coneccion individual no puedo hacer consultas simultaneas
+/*const connection = mysql.createConnection({  
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'characteres'
+});*/
 
-/* --- Creación del pool de conexiones a la BD --- */
+// creamos una instancia de una coneccion individual no puedo hacer consultas simultaneas
+const pool = mysql.createPool({  
+    host: 'localhost',
+    user: 'sa',
+    password: 'admin123',
+    database: 'latiendita',
+    port: 3366,
+    waitForConnetions: true,
+    connectionLimit: 10,
+    queueLimit: 0,
+});
 
-const pool = mysql.createPool(
-    {
-        host: process.env.DBHOST,
-        user: process.env.DBUSER,
-        password: process.env.DBPASS,
-        database: process.env.DBNAME,
-        port: process.env.DBPORT,
-        waitForConnections: true,
-        connectionLimit: 10,
-        queueLimit: 0
+/*connection.connect();
+module.exports = connection;*/
 
-    }
-);
-
-/* --- Test de la conexión a la DB --- */
-
-pool.getConnection((e, conn) => {
-    if(e) {
-        console.error('Error al conectarse a la DB: ' + e);
+pool.getConnection((error, connection)=>{
+    if( error) {
+        console.log('Hubo un error de conexion:', error );
     } else {
-        console.log('Conexión a la DB exitosa');
-        conn.release();
+        console.log('conexion exitosa');
+        connection.release();
     }
-})
-
+});
+//se exporta como una promesa 
 
 module.exports = {
     conn: pool.promise()
 }
+

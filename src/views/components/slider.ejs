@@ -1,0 +1,32 @@
+<div class="container glide">
+    <h2 class="slider__title">Últimos Lanzamientos</h2>
+       <div class="glide__track" data-glide-el="track">
+           <ul class="glide__slides">
+            <% items.forEach(function(item) { %>
+               <li class="glide__slide">
+                   <article class="card-item">
+                       <a class="card-item__link" href="/shop/item/<%=item.product_id %>">
+                           <picture class="card-item__cover">
+                               <span class="card-item__tag">Nuevo</span>
+                               <img class="card-item__img--front" src="<%= item.img_front %>"
+                                   alt="" />
+                               <img class="card-item__img--back" src="<%= item.img_back %>"
+                                   alt="" />  
+                           </picture>
+                           <div class="card-item__content">
+                               <p class="card-item__licence"><%= item.licence_name %></p>
+                               <h4 class="card-item__name"><%= item.product_name %></h4>
+                               <p class="card-item__price"><%= item.product_price %></p>
+                               <p class="card-item__promo">3 CUOTAS SIN INTERÉS</p>
+                           </div>
+                       </a>
+                   </article>
+               </li>
+               <% }); %>
+           </ul>
+       </div>
+       <div class="glide__arrows" data-glide-el="controls">
+           <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon icon="material-symbols:chevron-left" class="iconify-icon"></iconify-icon></button>
+           <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon icon="material-symbols:chevron-right" class="iconify-icon"></iconify-icon></button>
+         </div>
+     </div>
