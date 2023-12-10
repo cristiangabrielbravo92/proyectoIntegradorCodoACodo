@@ -1,0 +1,38 @@
+<%- include('../partials/headerAdmin') %>
+
+<!----------------->
+<!-- Inicio Main -->
+<!----------------->
+<main class="container">
+    <section class="form_login">
+        <h4 class="form_login__title">Iniciar sesión</h4>
+        <p class="form_login__text">Completá el formulario para ingresar a tu cuenta</p>
+         <form class="" action="" method="post">
+            <section class="form_login__container">
+                <div class="form_login__data">
+                    <label class="form_login__label">Email: </label>
+                    <input class="form_login__input" type="email" placeholder="barney.stinson@goliatnationalbank.com" />
+                </div>
+                <div class="form_login__data">
+                    <label class="form_login__label">Contraseña: </label>
+                    <input class="form_login__input" type="password" placeholder="*********" />
+                </div>
+                <div class="form_login__data">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Recordarme</label>
+                </div>
+                <div class="form_login__data">
+                    <input class="form_login__data__link" type="submit" value="Ingresar">
+                    <!-- <a class="form_login__data__link">Ingresar</a> -->
+                </div>
+                <a class="" href="">Olvidé mi contraseña</a>
+            </section>
+        </form>
+        
+    </section>
+</main>
+<!-------------->
+<!-- Fin Main -->
+<!-------------->
+
+<%- include('../partials/footer') %>
