@@ -1,0 +1,85 @@
+<%- include('../partials/headerAdmin') %>
+
+
+<!----------------->
+<!-- Inicio Main -->
+<!----------------->
+
+<main class="main-container">
+    <section class="container">
+
+        <form class="createForm" action="/admin/edit/<%= product.product_id %>?_method=PUT" method="post" enctype="application/x-www-form-urlencoded">
+            <h3 class="createForm__title">EDITAR ITEM</h3>
+            <label class="createForm__label" for="categoria">Categoría:</label>
+            <!-- seguro la lista de categorías se traiga de una columna de la base de datos y se inyecte desde JS pero por ahora puse de ejemplo estas 3 -->
+            <select class="createForm__select" name="categoria" id="categoria" placeholder="Seleccionar" required>
+                <% categories.forEach((category, i) => { %>
+                    <option <% if (product.category_id === i +1) { %>selected<% } %> value="<%= i+1 %>"><%= category.category_name%></option>
+                <% }); %>
+            </select>
+            <label class="createForm__label" for="licencia">Licencia:</label>
+            <!-- seguro la lista de categorías se traiga de una columna de la base de datos y se inyecte desde JS pero por ahora puse de ejemplo estas 3 -->
+            <select class="createForm__select" name="licencia" id="licencia" placeholder="Seleccionar" required>
+                <% licences.forEach((licence, i) => { %>
+                    <option <% if (product.licence_id === i +1) { %>selected<% } %> value="<%= i+1%>"><%= licence.licence_name%></option>
+                <% }); %>
+            </select>
+            <br>
+            <label class="createForm__label" for="nombre">Nombre del producto:</label>
+            <input class="createForm_input" type="text" name="nombre" id="nombre" value="<%= product.product_name %>"  required>
+            <br>
+            <textarea name="description" id="description" required><%= product.product_description %></textarea>
+            <br>
+            <label class="createForm__label" for="SKU">SKU:</label>
+            <input class="createForm_input" type="text" name="SKU" id="SKU" value="<%= product.sku %>" required>
+            <label class="createForm__label" for="precio">Precio:</label>
+            <input class="createForm_input" type="text" name="precio" id="precio" value="<%= product.price %>" required>
+            <label class="createForm__label" for="stock">Stock:</label>
+            <input class="createForm_input" type="text" name="stock" id="stock" value="<%= product.stock %>" required>
+            <br>
+            <label class="createForm__label" for="descuento">Descuento:</label>
+            <input class="createForm_input" type="text" name="descuento" id="descuento" value="<%= product.discount %>" required>
+            <label class="createForm__label" for="cuotas">Coutas:</label>
+            <select class="createForm__selectLarge" name="cuotas" id="cuotas" required>
+                <option <% if (item.dues === 0) { %>selected<% } %> value="cuotas1">1 pago</option>
+                <option <% if (item.dues === 3) { %>selected<% } %> value="cuotas3">3 Cuotas sin interés</option>
+                <option <% if (item.dues === 6) { %>selected<% } %> value="cuotas6">6 cuotas</option>
+                <option <% if (item.dues === 12) { %>selected<% } %> value="cuotas12">12 cuotas</option>
+            </select>
+            <br>
+            <label class="createForm__label" for="imagenes">Imágenes:</label>
+            <input class="createForm__insertFiles" type="file" name="imagen" id="imagen" accept="image/*" multiple>
+            <br>
+
+            <section class="createForm__Preview">
+
+                <div class="createForm__PreviewFront">
+                    <picture class="createForm__imgPreview"><img src="/img<%= product.image_front %>" alt="<%= product.product_name %>"></picture>
+        <p>Frente</p>
+    </div>
+
+    <div class="createForm__PreviewBack">
+        <picture class="createForm__imgPreview"><img src="/img<%= product.image_back %>" alt="<%= product.product_name %>"></picture>
+                    <p>Dorso</p>
+                </div>
+            </section>
+
+            <br>
+
+            <br>
+            <input class="createForm__submitButton" type="submit" value="Modificar Producto">
+
+
+        </form>
+
+
+
+
+    </section>
+</main>
+
+<!-------------->
+<!-- Fin Main -->
+<!-------------->
+
+<%- include('../partials/footer') %>

@@ -1,7 +1,18 @@
+const productServices = require('../services/productServices');
 const { getProductById } = require('../services/productServices')
 
 const mainControllers = {
-    home: async (req, res) => {
+
+    home: (req, res) => {
+        productServices.getAllProducts().then (products => {
+            res.render('home', {
+                title: 'Home | FunkoShop',
+                products
+            })
+        })
+    },
+
+    productByID: async (req, res) => {
         const id = req.params.id;
         const results = await getProductById(id);
 
@@ -21,6 +32,7 @@ const mainControllers = {
             data: results 
         })
     },
+
     contact: (req, res) => res.send('Route for Contact View'),
     about: (req, res) => res.send('Route for About View'),
     faqs: (req, res) => res.send('Route for Faqs View')

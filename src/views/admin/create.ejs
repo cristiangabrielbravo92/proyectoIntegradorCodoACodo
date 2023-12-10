@@ -1,0 +1,80 @@
+<%- include('../partials/headerAdmin') %>
+
+
+<!----------------->
+<!-- Inicio Main -->
+<!----------------->
+
+<main class="main-container">
+    <section class="container">
+
+        <form class="createForm" action="/admin/create" method="POST" enctype="multipart/form-data">
+            <h3 class="createForm__title">CREAR NUEVO ITEM</h3>
+            <label class="createForm__label" for="categoria">Categoría:</label>
+            
+            <select class="createForm__select" name="categoria" id="categoria" placeholder="Seleccionar" required>
+                <option value="" disabled selected hidden>Seleccionar</option>
+                <% categories.forEach((category, i) => { %>
+                    <option value="<%= i+1 %>"><%= licence.licence_name %></option>
+                <% }); %>
+            </select>
+            <label class="createForm__label" for="licencia">Licencia:</label>
+            
+            <select class="createForm__select" name="licencia" id="licencia" placeholder="Seleccionar" required>
+                <option value="" disabled selected hidden>Seleccionar</option>
+                <% licences.forEach((licence, i) => { %>
+                    <option value="<%= i+1 %>"><%= licence.licence_name %></option>
+                <% }); &>
+            </select>
+            <br>
+            <label class="createForm__label" for="nombre">Nombre del producto:</label>
+            <input class="createForm_input" type="text" name="nombre" id="nombre" placeholder="Ingresar el nombre del producto" required>
+            <br>
+            <textarea name="description" id="description" placeholder="Descripción del producto" required></textarea>
+            <br>
+            <label class="createForm__label" for="SKU">SKU:</label>
+            <input class="createForm_input" type="text" name="SKU" id="SKU" placeholder="SSK111AB001" required>
+            <label class="createForm__label" for="precio">Precio:</label>
+            <input class="createForm_input" type="text" name="precio" id="precio" placeholder="$ 0.000,00" required>
+            <label class="createForm__label" for="stock">Stock:</label>
+            <input class="createForm_input" type="text" name="stock" id="stock" placeholder="0" required>
+            <br>
+            <label class="createForm__label" for="descuento">Descuento:</label>
+            <input class="createForm_input" type="text" name="descuento" id="descuento" placeholder="0%" required>
+            <label class="createForm__label" for="cuotas">Coutas:</label>
+            <select class="createForm__select" name="cuotas" id="cuotas" required>
+                <option value="cuotas1">1 pago</option>
+                <option value="cuotas3">3 Cuotas sin interés</option>
+                <option value="cuotas6">6 cuotas</option>
+                <option value="cuotas12">12 cuotas</option>
+            </select>
+            <br>
+            <label class="createForm__label" for="imagenes">Imágenes:</label>
+            <input class="createForm__insertFiles" type="file" name="imagen" id="imagen" accept="image/*" multiple>
+            <br>
+            <br>
+            <div class="createForm__buttons">
+            <input class="createForm__submitButton type="submit" value="Agregar Producto">
+            <input class="createForm__clearButton type="reset" value="Limpiar">
+        </div>
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+</main>
+
+<!-------------->
+<!-- Fin Main -->
+<!-------------->
+
+<%- include('../partials/footer') %>
