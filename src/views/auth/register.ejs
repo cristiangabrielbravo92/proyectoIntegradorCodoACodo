@@ -1,0 +1,52 @@
+<%- include('../partials/headerAdmin') %>
+ 
+<!----------------->
+<!-- Inicio Main -->
+<!----------------->
+
+<main class="container">
+    <section class="form_login">
+        <h4 class="form_login__title">Creá tu cuenta</h4>
+        <p class="form_login__text">Completá el formulario para ser parte del mundo de los Funkos</p>
+         <form class="">
+            <section class="form_login__container" action="/register" method="POST" enctype="application/x-www-form-urlencoded">
+                <div class="form_login__data">
+                    <label class="form_login__label">Nombre:</label>
+                    <input class="form_login__input" type="text" placeholder="Jerry" />
+                </div>
+                <div class="form_login__data">
+                    <label class="form_login__label">Apellido:</label>
+                    <input class="form_login__input" type="text" placeholder="Seindfeld" />
+                </div>
+                <div class="form_login__data">
+                    <label class="form_login__label">Email:</label>
+                    <input class="form_login__input" type="email" placeholder="jerry.seinfeld@comediant.com" />
+                </div>
+                <div class="form_login__data">
+                    <label class="form_login__label">Contraseña:</label>
+                    <input class="form_login__input" type="password" placeholder="********" />
+                </div>
+                <div class="form_login__data">
+                    <label class="form_login__label">Repita Contraseña: </label>
+                    <input class="form_login__input" type="password" placeholder="********" />
+                </div>
+                <div class="form_login__data">
+                    <div>                        
+                        <input class="form_login__input" type="checkbox" placeholder="" />
+                        <label class="form_login__label_checkbox"><span class="form_login__span">Acepto</span> términos y condiciones.</label>
+                    </div>
+                    <input class="form_login__data__link" type="submit" value="Registrarse">
+                    <!-- <a class="form_login__data__link">Registrarse</a> -->
+                    
+                </div>
+            </section>
+        </form>
+        
+    </section>
+</main>
+
+<!-------------->
+<!-- Fin Main -->
+<!-------------->
+
+<%- include('../partials/footer') %>

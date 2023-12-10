@@ -1,0 +1,128 @@
+<%- include('../partials/headerShop') %>
+
+<!----------------->
+<!-- Inicio Main -->
+<!----------------->
+
+<main>
+    <div class="container mt-5">
+        <div class="row">
+            <aside class="col-12 col-md-2">
+                <div class="row">
+            <div class="col-12">
+              <label for="formGroupExampleInput" class="form-label text-uppercase">Buscar</label>
+              <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+            </div>
+            <div class="col-12 mt-3">
+              <label for="inputState" class="form-label text-uppercase">Ordenar por</label>
+              <select id="inputState" class="form-select">
+                <option selected>Mayor a menor</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-12 mt-3">
+              <label for="formGroupExampleInput" class="form-label text-uppercase">Precio</label>
+            </div>
+            <div class="row align-items-end">
+              <div class="col-12 col-md-2">
+                <label for="formGroupExampleInput" class="form-label text-uppercase">Min</label>
+              </div>
+              <div class="col-12 col-md-4">
+                <input type="text" class="form-control" placeholder="0" aria-label="First name">
+              </div>
+              <div class="col-12 col-md-2">
+                <label for="formGroupExampleInput" class="form-label text-uppercase">Max</label>
+              </div>
+              <div class="col-12 col-md-4">
+                <input type="text" class="form-control" placeholder="0" aria-label="First name">
+              </div>
+              
+            </div>
+            <div class="col-12 mt-3">
+              <label for="formGroupExampleInput" class="form-label text-uppercase">Filtrar</label>
+            </div>
+            <div class="col-12 form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck1">
+              <label class="form-check-label" for="gridCheck1">
+                NUEVOS
+              </label>
+            </div>
+            <div class="col-12 form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck1">
+              <label class="form-check-label" for="gridCheck1">
+                OFERTAS
+              </label>
+            </div>
+            <div class="col-12 form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck1">
+              <label class="form-check-label" for="gridCheck1">
+                EDICIÓN ESPECIAL
+              </label>
+            </div>
+            <div class="col-12 form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck1">
+              <label class="form-check-label" for="gridCheck1">
+                FAVORITOS
+              </label>
+            </div>
+                </div>
+
+
+            </aside>
+            <div class="col-12 col-md-10 mb-4">
+                <div class="row">
+            <% items.forEach( item => { %>
+                <!-- acá empieza una card -->
+                <div class="col-12 col-md-4">
+                    <div class="card border-0">
+                        <div class="d-flex justify-content-end p-2">
+                          <button class="btn btn-primary rounded-0 text-white py-4 px-4">NUEVO</button>
+                        </div>
+                        <img src="../assets/img/star-wars/trooper-1.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="card-title card-item__licence">STAR WARS</p>
+                          <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item card-item__price border-0">$ 1799,99</li>
+                          <li class="list-group-item card-item__promo">3 CUOTAS SIN INTERÉS</li>
+                        </ul>
+                    </div>
+                
+                </div>
+              <!-- acá termina la card -->
+            <% }); %>
+            
+            
+          
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-------------->
+<!-- Fin Main -->
+<!-------------->
+  
+  <div class="container d-flex justify-content-center">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination pagination-lg">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+<%- include('../partials/footer') %>
