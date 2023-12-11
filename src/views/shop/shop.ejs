@@ -4,6 +4,11 @@
 <!-- Inicio Main -->
 <!----------------->
 
+<!--------------------------------------------------------------------->
+<!-- chequear los estilos de rebe para el footer y el link de estilos-->
+<!--------------------------------------------------------------------->
+
+
 <main>
     <div class="container mt-5">
         <div class="row">
@@ -78,14 +83,14 @@
                         <div class="d-flex justify-content-end p-2">
                           <button class="btn btn-primary rounded-0 text-white py-4 px-4">NUEVO</button>
                         </div>
-                        <img src="../assets/img/star-wars/trooper-1.webp" class="card-img-top" alt="...">
+                        <img src="../../img<%= item.image_front%>" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <p class="card-title card-item__licence">STAR WARS</p>
-                          <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
+                          <p class="card-title card-item__licence"><%= item.licence_name %></p>
+                          <h4 class="card-item__name"><%= item.product_name %></h4>
                         </div>
                         <ul class="list-group list-group-flush">
-                          <li class="list-group-item card-item__price border-0">$ 1799,99</li>
-                          <li class="list-group-item card-item__promo">3 CUOTAS SIN INTERÉS</li>
+                          <li class="list-group-item card-item__price border-0"><%= item.price %></li>
+                          <li class="list-group-item card-item__promo"><%= item.dues %> CUOTAS SIN INTERÉS</li>
                         </ul>
                     </div>
                 

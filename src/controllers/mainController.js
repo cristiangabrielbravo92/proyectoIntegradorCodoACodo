@@ -1,38 +1,23 @@
-const productServices = require('../services/productServices');
 const { getProductById } = require('../services/productServices')
+const licenceServices = require('../services/licenceServices')
 
 const mainControllers = {
 
-    home: (req, res) => {
-        productServices.getAllProducts().then (products => {
-            res.render('home', {
-                title: 'Home | FunkoShop',
-                products
-            })
-        })
+    home: async (req, res) => {
+        //console.log(req.session);
+        const licences = await licenceServices.getAllItemsLicences();
+        console.log(licences)
+        res.render('home', {
+            view: {
+                title: 'Home | FunkoShop'
+            },
+            collections: licences.data,
+            //enableGlide: true
+
+        });
     },
 
-    productByID: async (req, res) => {
-        const id = req.params.id;
-        const results = await getProductById(id);
-
-        if (results.isError) {
-            return res.status(500).send({
-                message: 'Hemos tenido un error al consultar los datos',
-                error: results.message
-            
-            });
-        }
-
-
-        //console.log("results data: ", results);
-
-        res.send({
-            info: 'Route for Home View',
-            data: results 
-        })
-    },
-
+    
     contact: (req, res) => res.send('Route for Contact View'),
     about: (req, res) => res.send('Route for About View'),
     faqs: (req, res) => res.send('Route for Faqs View')

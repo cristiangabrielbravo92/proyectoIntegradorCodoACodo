@@ -5,16 +5,23 @@
 <!----------------->
 
 <main>
+  <% if (!item) { %>
+    <section class="">
+      <h1> El producto no existe o fue eliminado </h1>
+
+    </section>
+
+  <% } else { %>
     <div class="container mt-5">
         <section class="row align-items-center mobile-collection">
           <picture class="col-12 col-sm-6 d-block d-sm-none">
               <img src="../../img<%= item.image_front %>" alt="<%= item.product_description %>" />
           </picture>
           <article class="col-12 col-sm-6 mobile-collection order-1">
-               <p class="card-title card-item__licence_item"><%= product.licence_name %></p>
-               <h1 class="collection__title_item mb-3"><%= product.product_name %></h1>
-               <p class="collection__text_item_item mb-3"><%= product.product_description %></p>
-               <p class="collection_item_item_price"><%= product.price %></p>
+               <p class="card-title card-item__licence_item"><%= item.licence_name %></p>
+               <h1 class="collection__title_item mb-3"><%= item.product_name %></h1>
+               <p class="collection__text_item_item mb-3"><%= item.product_description %></p>
+               <p class="collection_item_item_price"><%= item.price %></p>
                <div class="row">
                 <form action="#" method="POST" enctype="application/x-www-form-urlencoded">
                   <div class="col-12 col-lg-4 d-flex">
@@ -38,8 +45,8 @@
               <img src="../../img/star-wars/baby-yoda-1.webp" alt="Figura de Baby Yoda" />
           </picture> -->
       </section>
-      
-      <%- include('components/slider') %>
+      <% } %>
+      <%- include('../components/slider.ejs') %>
 
     </div>
 

@@ -15,7 +15,7 @@
             <select class="createForm__select" name="categoria" id="categoria" placeholder="Seleccionar" required>
                 <option value="" disabled selected hidden>Seleccionar</option>
                 <% categories.forEach((category, i) => { %>
-                    <option value="<%= i+1 %>"><%= licence.licence_name %></option>
+                    <option value="<%= i+1 %>"><%= category.category_name %></option>
                 <% }); %>
             </select>
             <label class="createForm__label" for="licencia">Licencia:</label>
@@ -24,7 +24,7 @@
                 <option value="" disabled selected hidden>Seleccionar</option>
                 <% licences.forEach((licence, i) => { %>
                     <option value="<%= i+1 %>"><%= licence.licence_name %></option>
-                <% }); &>
+                <% }); %>
             </select>
             <br>
             <label class="createForm__label" for="nombre">Nombre del producto:</label>
@@ -54,8 +54,8 @@
             <br>
             <br>
             <div class="createForm__buttons">
-            <input class="createForm__submitButton type="submit" value="Agregar Producto">
-            <input class="createForm__clearButton type="reset" value="Limpiar">
+            <input type="submit" class="createForm__submitButton" value="Agregar Producto">
+            <input type="reset" class="createForm__clearButton" value="Limpiar">
         </div>
 
         </form>

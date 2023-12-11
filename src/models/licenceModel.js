@@ -2,7 +2,7 @@ const { conn } = require('../config/conn');
 
 const getAll = async () => {
   try {
-    const [rows] = await conn.query('SELECT * FROM licence;');
+    const [rows] = await conn.query('SELECT * FROM challenge_integrador.licence;');
     const response = {
       isError: false,
       data: rows

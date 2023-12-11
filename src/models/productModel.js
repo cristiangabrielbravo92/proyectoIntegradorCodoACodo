@@ -8,6 +8,7 @@ const getAll = async () => {
             isError: false,
             data: rows
         };
+        console.log(response);
         return response;
     } catch (error) {
         const e = {

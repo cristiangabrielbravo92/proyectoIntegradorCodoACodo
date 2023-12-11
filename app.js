@@ -1,9 +1,15 @@
 const express = require('express');
 const app = express();
-//const cors = require('cors');
 require('dotenv').config();
+const methodOverride = require('method-override');
+const { initSession } = require('./src/utils/session');
+//const session = require('express-session');
 
+
+//const cors = require('cors');
 //app.use(cors());
+
+
 
 /* ----- Import de las rutas ----- */
 const mainRoutes = require('./src/routes/mainRoutes');
@@ -13,11 +19,41 @@ const authRoutes = require('./src/routes/authRoutes');
 //const { notFound } = require('./src/utils/errorHandlers'); 
 
 /* -- Definición de la carpeta de archivos estáticos -- */ 
-app.use(express.static('public_html'));
+app.use(express.static('public'));
+
+/* Configuración del Template Engine - EJS */
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
+
+
+
+/* User session */
+/* app.use(session({
+    secret: "sessionSecret",
+    resave: false,
+    saveUnitialized: true
+})); */
+
+/* Creación de la sesión de usuario */
+app.use(initSession());
+
+/* Locals para indicar que el usuario inició sesión */
+app.use((req, res, next) => {
+    res.locals.isLogged = req.session.isLogged;
+    next();
+
+});
+
+
 
 /* --- Parsing de los datos recibidos por POST --- */ 
 app.use(express.urlencoded());
 app.use(express.json())
+
+/* Sobreescritura de POST method para usar métodos PUT y DELETE */
+app.use(methodOverride('_method'));
+
+
 
 /* ----- Rutas de la aplicación -----*/
 app.use('/', mainRoutes);
@@ -27,6 +63,7 @@ app.use('/auth/', authRoutes);
 //app.use(notFound);
 
 
-const PORT = process.env.NODEPORT;
+
+const PORT = process.env.NODEPORT || 3000;
 
 app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));

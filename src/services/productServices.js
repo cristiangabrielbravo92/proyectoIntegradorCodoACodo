@@ -5,8 +5,8 @@ const getAllProducts = async () => {
 }
 
 const getProductById = async (id) => {
-    return await productModel.getOne({product_id: id});
-} 
+    return await ProductModel.getOne({product_id: id});
+} //este no hace falta que esté acá pero lo dejo como referencia
 
 const createProduct = async (item, files) => {
     const itemSchema = {
