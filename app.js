@@ -3,7 +3,7 @@ const app = express();
 require('dotenv').config();
 const methodOverride = require('method-override');
 const { initSession } = require('./src/utils/session');
-//const session = require('express-session');
+const session = require('express-session');
 
 
 //const cors = require('cors');
@@ -25,14 +25,6 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
-
-
-/* User session */
-/* app.use(session({
-    secret: "sessionSecret",
-    resave: false,
-    saveUnitialized: true
-})); */
 
 /* Creación de la sesión de usuario */
 app.use(initSession());

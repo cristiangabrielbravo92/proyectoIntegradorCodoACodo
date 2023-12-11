@@ -3,7 +3,7 @@ const isLogged = (req, res, next) => {
      return next();
     }
   
-    return res.status(401).send('Inicio de sesión requerido');
+    return res.status(401).redirect('/login');
   }
   
   module.exports = {

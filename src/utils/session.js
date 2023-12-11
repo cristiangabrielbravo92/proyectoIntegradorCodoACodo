@@ -6,6 +6,7 @@ function initSession() {
     secret: process.env.SESSION_NAME,
     resave: false,
     saveUninitialized: true,
+    rolling: true
   });
 };
 
@@ -13,3 +14,9 @@ function initSession() {
 module.exports = {
     initSession
 }
+
+// session({
+//   secret: "sessionAdmin",
+//   resave: false,
+//   saveUnitialized: true
+// })
