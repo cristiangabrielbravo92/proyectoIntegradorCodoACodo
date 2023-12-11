@@ -4,7 +4,7 @@ const uploadFiles = require('../middlewares/uploadFiles');
 const { isLogged } = require('../middlewares/login');
 const adminControllers = require('../controllers/adminController');
 
-//router.use(isLogged);
+router.use(isLogged);
 
 router.get('/', isLogged, adminControllers.admin);
 router.get('/create', isLogged, adminControllers.create);

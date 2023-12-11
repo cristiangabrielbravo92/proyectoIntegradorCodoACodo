@@ -15,7 +15,7 @@ const authControllers = {
     loginUser: (req, res) => {
         const {email, password } = req.body;
         const emailValidation = email == userCredentials.email;
-        const passwordValidation = password = userCredentials.email;
+        const passwordValidation = password == userCredentials.password;
         req.session.isLogged = emailValidation && passwordValidation ? true : false;
 
         if (req.session.isLogged) {
@@ -26,7 +26,7 @@ const authControllers = {
 
 
 
-    }
+    },
     
     //register: (req, res) => res.send('Route for Register View'),
     register: (req, res) => res.render('./auth/register', {

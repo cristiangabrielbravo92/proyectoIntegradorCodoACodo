@@ -4,7 +4,7 @@ const validateInput = require('../middlewares/validator');
 const authControllers = require('../controllers/authController');
 const { body } = require('express-validator');
 
-const loginValidation = {
+const loginValidation = [
     body('email')
     .isEmail()
     .withMessage('Ingrese un correo válido'),
@@ -12,7 +12,7 @@ const loginValidation = {
     .isLength({min: 6})
     .isAlphanumeric()
     .withMessage('Ingrese una contraseña de al menos 6 caracteres que contenga letras y números.')
-};
+];
 
 
 router.get('/login', authControllers.login);

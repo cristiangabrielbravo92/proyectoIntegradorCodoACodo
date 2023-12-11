@@ -3,7 +3,7 @@ const isLogged = (req, res, next) => {
      return next();
     }
   
-    return res.status(401).redirect('/login');
+    return res.status(401).redirect('/auth/login');
   }
   
   module.exports = {
