@@ -1,0 +1,165 @@
+<%- include('../partials/headerShop') %>
+
+<!----------------->
+<!-- Inicio Main -->
+<!----------------->
+
+<main class="container">
+    <section class="py-5">
+        <h3 class="carrito_title text-uppercase pt-4 fw-bold mb-5 w-50">Carrito de compras</h3>
+        <div class="card shadow p-3 mb-5 border-0 rounded-4 mt-4">
+           <div class="card-body mt-4">
+             <div class="row">
+               <div class="col-lg-5 col-12 text-center">
+                 <div class="carrito_detalle fw-bold">DETALLE DE PRODUCTO</div>
+               </div>
+               <div class="col-lg-3 col-12 text-center">
+                 <div class="carrito_detalle fw-bold">CANTIDAD</div>
+               </div>
+               <div class="col-lg-3 col-12 text-center">
+                 <div class="carrito_detalle fw-bold">TOTAL</div>
+               </div>
+               <div class="col-lg-1 col-12">
+     
+               </div>
+             </div>
+           </div>
+         </div>
+       </section>  
+       <% items.forEach((product, i) => { %>
+        <%= product_id = product.product_id %>
+       <section>
+         <div class="card shadow p-3 mb-5 border-0 rounded-4">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-5 col-12">
+                 <div class="row">
+                   <div class="carrito_detalle fw-bold col-6">
+                     <img class="carrito_detalle-previewImage" src="/img<%= product.image %>"></img>
+                   </div>
+                   <div class="carrito_detalle fw-bold col-6 flex">
+                     <h4 class="carrito_detalle-title">
+                       <%= product.product_name %></h4>
+                     <p class="carrito_detalle-license"><%= product.licence_name %></p>
+                     <p class="carrito_detalle-unitPrice">Precio Unitario: <%= product.price %></p>
+     
+                     </p>
+                   </div>
+     
+                 </div>
+                  
+                </div>
+                <div class="col-lg-3 col-12 d-flex">
+                
+                     <input class="form-control"type="number" value="<%= product.quantity %>"/>
+                   <div class="ms-2">
+                     <button class="btn btn-primary rounded-0 w-100 mb-1">+</button>
+                     <button class="btn btn-primary rounded-0 w-100">-</button>
+                </div> 
+                </div>            
+               <div class="col-lg-3 col-12 text-center">
+                 <div class="carrito_detalle fw-bold">$1799,99 <%= product.price %> </div>
+               </div>
+               <div class="col-lg-1 col-12">
+                 <div class="carrito_detalle fw-bold">x</div>
+               </div>
+               </div>
+            </div>
+          </div>
+        </section>  
+        <% }); %>
+        <!-- <section>
+         <div class="card shadow p-3 mb-5 border-0 rounded-4">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-5 col-12">
+                  <div class="carrito_detalle fw-bold">DETALLE DE PRODUCTO</div>
+                </div>
+                <div class="col-lg-3 col-12 d-flex">
+                
+                     <input class="form-control"type="number" />
+                   <div class="ms-2">
+                     <button class="btn btn-primary rounded-0 w-100 mb-1">+</button>
+                     <button class="btn btn-primary rounded-0 w-100">-</button>
+                </div> 
+                </div>            
+               <div class="col-lg-3 col-12 text-center">
+                 <div class="carrito_detalle fw-bold">Total</div>
+               </div>
+               <div class="col-lg-1 col-12">
+                 <div class="carrito_detalle fw-bold">x</div>
+               </div>
+               </div>
+            </div>
+          </div>
+        </section>  -->
+        <section>
+         <div class="row">
+           <div class="col-12 col-lg-6 offset-lg-6">
+             <h4 class="text-uppercase carrito_title w-50">Resumen</h4>
+             <div class="row">
+               <div class="col-12 py-2">
+                 <div class="card">
+                   <div class="card-body">
+                     <div class="row">
+                       <div class="col-12 col-lg-8 d-flex">
+                         <p class="card-item__price fw-bold">CANTIDAD DE ELEMENTOS </p>
+                       </div>
+                       <div class="col-12 col-lg-4">
+                         <p class="card-item__price fw-bold">3</p>
+                     
+                       </div>  
+                     </div>
+                     <div class="row">
+                       <div class="col-12 col-lg-8 d-flex">
+                         <p class="card-item__price fw-bold">
+                           SUBTOTAL
+                         </p>
+                       </div>
+                       <div class="col-12 col-lg-4">
+                         <p class="card-item__price fw-bold">
+                           1598
+                         </p>
+                       </div>  
+                     </div>
+                     <div class="row">
+                       <div class="col-12 col-lg-8 d-flex">
+                         <p class="card-item__price fw-bold">ENVIO</p>
+                       </div>
+                       <div class="col-12 col-lg-4">
+                         <p class="card-item__price">0</p>
+                       </div>  
+                     </div>
+                     <hr class="py-1">
+                     <div class="row">
+                       <div class="col-12 col-lg-8 d-flex">
+                         <p class="card-item__price fw-bold">TOTAL</p>
+                       </div>
+                       <div class="col-12 col-lg-4">
+                         <p class="card-item__price fw-bold">1598</p>
+                       </div>  
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="row py-1 mb-5">
+               <div class="col-12 d-inline-grid mb-5">
+                <button class="btn btn-primary text-uppercase border-0 py-3 button_carrito mb-5">Ir a pagar</button>
+               </div>
+             </div>
+           </div>
+          
+         </div>  
+        </section>
+
+
+
+</main>
+
+<!-------------->
+<!-- Fin Main -->
+<!-------------->
+
+<script src="../../../public/js/item.js"></script>
+<%- include('../partials/footer') %>

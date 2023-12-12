@@ -13,17 +13,17 @@
 
   <% } else { %>
     <div class="container mt-5">
-        <section class="row align-items-center mobile-collection">
-          <picture class="col-12 col-sm-6 d-block d-sm-none">
-              <img src="../../img<%= item.image_front %>" alt="<%= item.product_description %>" />
-          </picture>
-          <article class="col-12 col-sm-6 mobile-collection order-1">
-               <p class="card-title card-item__licence_item"><%= item.licence_name %></p>
-               <h1 class="collection__title_item mb-3"><%= item.product_name %></h1>
-               <p class="collection__text_item_item mb-3"><%= item.product_description %></p>
-               <p class="collection_item_item_price"><%= item.price %></p>
-               <div class="row">
-                <form action="#" method="POST" enctype="application/x-www-form-urlencoded">
+      <section class="row align-items-center mobile-collection">
+        <picture class="col-12 col-sm-6 d-block d-sm-none">
+          <img src="../../img<%= item.image_front %>" alt="<%= item.product_description %>" />
+        </picture>
+        <article class="col-12 col-sm-6 mobile-collection order-1">
+          <p class="card-title card-item__licence_item"><%= item.licence_name %></p>
+          <h1 class="collection__title_item mb-3"><%= item.product_name %></h1>
+          <p class="collection__text_item_item mb-3"><%= item.product_description %></p>
+          <p class="collection_item_item_price"><%= item.price %></p>
+          <form action="/shop/item/:<%= item.product_id %>/add" method="POST" enctype="multipart/form-data">
+          <div class="row">
                   <div class="col-12 col-lg-4 d-flex">
                     <input class="form-control" type="text" name="quantity" id="quantity" placeholder="0" />
                   </div>
@@ -34,17 +34,17 @@
                   <div class="col-12 col-lg-7">
                     <button class="btn btn-primary rounded-0 py-3 collection_item_item__button" type="submit">Agregar al carrito</button>
                   </div>
-                </form>
-               </div>
-               <a class="collection_item_item_promo">Ver métodos de pago - 3 CUOTAS SIN INTERÉS</a>
-              
-               
-              <!---<a class="collection__link mb-3 d-inline-block"href="pages/item.html">VER COLECCIÓN</a> -->
-          <!-- </article>
-          <picture class="col-12 col-sm-6 d-none d-sm-block order-0">
-              <img src="../../img/star-wars/baby-yoda-1.webp" alt="Figura de Baby Yoda" />
-          </picture> -->
-      </section>
+                </div>
+              </form>
+                <a class="collection_item_item_promo">Ver métodos de pago - 3 CUOTAS SIN INTERÉS</a>
+                
+                
+                <!---<a class="collection__link mb-3 d-inline-block"href="pages/item.html">VER COLECCIÓN</a> -->
+                <!-- </article>
+                  <picture class="col-12 col-sm-6 d-none d-sm-block order-0">
+                    <img src="../../img/star-wars/baby-yoda-1.webp" alt="Figura de Baby Yoda" />
+                  </picture> -->
+        </section>
       <% } %>
       <%- include('../components/slider.ejs') %>
 

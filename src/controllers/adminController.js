@@ -31,7 +31,7 @@ const adminControllers = {
     createItem: async (req, res) => {
         const item = req.body; 
         const files = req.files;
-        console.log(item);
+        //console.log(item);
         await ProductService.create(item, files);
         res.redirect('/admin');    
     },
