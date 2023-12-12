@@ -3,7 +3,9 @@ const app = express();
 require('dotenv').config();
 const methodOverride = require('method-override');
 const { initSession } = require('./src/utils/session');
-const session = require('express-session');
+//const session = require('express-session');
+const session = require('cookie-session');
+const path = require('path');
 
 
 //const cors = require('cors');
@@ -19,11 +21,11 @@ const authRoutes = require('./src/routes/authRoutes');
 //const { notFound } = require('./src/utils/errorHandlers'); 
 
 /* -- Definición de la carpeta de archivos estáticos -- */ 
-app.use(express.static('public'));
+app.use(express.static(path.resolve(__dirname, "public")));
 
 /* Configuración del Template Engine - EJS */
 app.set('view engine', 'ejs');
-app.set('views', './src/views');
+app.set('views',  path.resolve(__dirname, "./src/views"));
 
 
 /* Creación de la sesión de usuario */
