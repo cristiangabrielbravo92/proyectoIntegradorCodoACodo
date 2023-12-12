@@ -16,7 +16,7 @@ module.exports = {
 }
 
 // session({
-//   secret: "sessionAdmin",
+//   secret: "funkoSession",
 //   resave: false,
 //   saveUnitialized: true
 // })

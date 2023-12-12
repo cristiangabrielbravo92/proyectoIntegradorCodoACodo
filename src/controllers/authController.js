@@ -38,7 +38,9 @@ const authControllers = {
     registerUser: (req, res) => res.send('Route for Register when a guest user has completed the register form and tries to create an account'),
     
     //logout: (req, res) => res.send('Route for Logout when a user ends his session')
-    logout: (req, res) => res.redirect('/')
+    logout: (req, res) => { 
+        req.session.isLogged = false;
+        res.redirect('/') }
 
 
 };

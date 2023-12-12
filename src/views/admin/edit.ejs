@@ -8,7 +8,7 @@
 <main class="main-container">
     <section class="container">
 
-        <form class="createForm" action="/admin/edit/<%= item.product_id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form class="createForm" action="/admin/edit/:<%= item.product_id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <h3 class="createForm__title">EDITAR ITEM</h3>
             <label class="createForm__label" for="categoria">Categoría:</label>
             <!-- seguro la lista de categorías se traiga de una columna de la base de datos y se inyecte desde JS pero por ahora puse de ejemplo estas 3 -->
