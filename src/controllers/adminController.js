@@ -1,6 +1,7 @@
 const ProductService = require('../services/productServices');
 const CategoryService = require('../services/categoryServices');
 const LicenseService = require('../services/licenceServices');
+const ProductModel = require('../models/productModel'); //acá consulta al modelo directamente porque no puede traer editProduct como función
 
 const adminControllers = {
     admin: async (req, res) => {
@@ -30,6 +31,7 @@ const adminControllers = {
     createItem: async (req, res) => {
         const item = req.body; 
         const files = req.files;
+        console.log(item);
         await ProductService.create(item, files);
         res.redirect('/admin');    
     },
@@ -52,13 +54,13 @@ const adminControllers = {
     editItem: async (req, res) => {
         const id = req.params.id;
         const item = req.body;
-        await ProductService.edit(item, id);
+        await ProductModel.edit(id, item);
         res.redirect('./admin');
     },
 
     deleteItem: async (req, res) => {
         const id = req.params.id;
-        await ProductService.delete(id);
+        await ProductService.deleteProduct(id);
         res.redirect('/admin');
     }
     

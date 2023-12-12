@@ -8,7 +8,7 @@ const getAll = async () => {
             isError: false,
             data: rows
         };
-        console.log(response);
+        //console.log(response);
         return response;
     } catch (error) {
         const e = {
@@ -69,9 +69,11 @@ const create = async (params) => {
       }
 };
 
-const edit = async (params, id) => {
+
+
+const edit = async (id, params) => {
     try {
-        const [rows] = await conn.query('UPDATE product SET ? WHERE ?;', [params, id]);
+        const [rows] = await conn.query('UPDATE product SET ? WHERE ?;', [id, params]);
         const response = {
             isError: false,
             message: `Producto modificado exitosamente.`,

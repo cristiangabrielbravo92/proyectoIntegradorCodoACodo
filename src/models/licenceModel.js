@@ -21,6 +21,30 @@ const getAll = async () => {
   }
 }
 
+
+/* const getLicenceIDByLicenceName = async (params) => {
+    
+  try {
+      const [rows] =  await conn.query('SELECT challenge_integrador.licence.licence_id FROM challenge_integrador.licence WHERE challenge_integrador.licence.licence_name = ?;', params);
+      const response = {
+          isError: false,
+          data: rows
+      }
+      return response;
+      
+  } catch (error) {
+      const e = {
+          isError: true,
+          message: `Error al consultar el dato: ${error}`
+      }
+      return e;
+  } finally {
+      await conn.releaseConnection();
+  }
+} */
+
+
 module.exports = {
-  getAll
+  getAll //, 
+  //getLicenceIDByLicenceName
 }

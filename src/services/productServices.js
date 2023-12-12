@@ -1,4 +1,6 @@
-const ProductModel = require('../models/productModel')
+const ProductModel = require('../models/productModel');
+//const LicenceModel = require('../models/licenceModel')
+//const licenceServices = require('../services/licenceServices');
 
 const getAllProducts = async () => {
     return await ProductModel.getAll();
@@ -19,13 +21,14 @@ const createProduct = async (item, files) => {
       dues: item.dues,
       image_front: '/'+files[0].filename,
       image_back: '/'+files[1].filename,
-      licence_id: item.collection,
+      licence_id: item.licence,
       category_id: item.category
     }
+    //console.log(itemSchema);
     return await ProductModel.create([Object.values(itemSchema)]);
   }
 
-const editProduct = async (item, id) => {
+const editProduct = async (id, item) => {
     const itemSchema = {
       product_name: item.name,
       product_description: item.description,
@@ -36,7 +39,7 @@ const editProduct = async (item, id) => {
       dues: item.dues,
       image_front: '/imagen_front',
       image_back: '/imagen_front',
-      licence_id: item.collection,
+      licence_id: item.licence,
       category_id: item.category
     }
   
