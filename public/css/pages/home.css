@@ -78,7 +78,7 @@
     padding-right: var(--spacing-36);
 }
 
-.collection:nth-child(2) .collection__cover { /* agarra el segundo item de las colecciones*/
+.collection:nth-child(even) .collection__cover { /* agarra el segundo item de las colecciones*/
     order: -1; /* pone la imagen del segundo ítem al principio */
 }
 
