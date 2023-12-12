@@ -2,7 +2,10 @@ const { conn } = require('../config/conn');
 
 const getAll = async () => {
   try {
-    const [rows] = await conn.query('SELECT * FROM challenge_integrador.licence;');
+    //la siguiente es una consulta a la BD local
+    //const [rows] = await conn.query('SELECT * FROM challenge_integrador.licence;');
+    const [rows] = await conn.query('SELECT * FROM licence;');
+    //console.log(rows);
     const response = {
       isError: false,
       data: rows

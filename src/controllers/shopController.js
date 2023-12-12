@@ -35,7 +35,7 @@ const shopControllers = {
             price: 1800
           }
         ];
-        console.log(req.session.cart);
+        //console.log(req.session.cart);
         res.render( './shop/shop',{
           view: {
             title: "Shop | Funkoshop"
@@ -66,10 +66,10 @@ const shopControllers = {
 
     //addItem: (req, res) => res.send(`Route for add the current item to the shop cart`),
     addItem: (req, res) => {
-      const quantity = req.body; 
-      console.log(quantity);
       const product_id = req.params.id;
       console.log(product_id);
+      const quantity = req.body; 
+      console.log(quantity);
 
       /* req.session.cart.push( {
         product_id: req.params.id,

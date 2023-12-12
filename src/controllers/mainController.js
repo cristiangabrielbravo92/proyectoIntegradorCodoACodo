@@ -6,7 +6,7 @@ const mainControllers = {
     home: async (req, res) => {
         //console.log(req.session);
         const licences = await licenceServices.getAllItemsLicences();
-        //console.log(licences)
+        //console.log(licences);
         res.render('home', {
             view: {
                 title: 'Home | FunkoShop'
