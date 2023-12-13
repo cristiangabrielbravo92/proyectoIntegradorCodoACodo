@@ -21,8 +21,10 @@ h3{
 }
 
 .card-title {
-    background-color: var(--light-bg-solid);
+    background-color: var(--light-bg-solid)!important;
     text-align: right !important;
+    justify-content: space-around !important;
+    flex-wrap: nowrap !important;
 }
 
 /* --- Card de productos del carrito de compras--- */
