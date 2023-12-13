@@ -3,7 +3,7 @@ const { conn } = require('../config/conn');
 const getAll = async () => {
     try {
         const [rows] =  await conn.query('SELECT product.*, category.category_name, licence.licence_name FROM (product LEFT JOIN category ON product.category_category_id = category.category_id) LEFT JOIN licence ON product.licence_id = licence.licence_id;');
-        //console.log("Model data: ", fields);
+        //console.log(rows)
         const response = {
             isError: false,
             data: rows
@@ -22,14 +22,10 @@ const getAll = async () => {
 }
 
 
-//Para terminar la misión queda replicar la lógica de getOne haciendo la query con la información que le llega desde params y la query de insert
-// update o delete en función de lo que está llegando
-// HINT: crear es POST y actualizar es PUT teniendo en cuenta que en las ruta.s para poder escuchar put post y delete hay que instalar
-// la librería "method-override" que se usa como middleware en app.js (a nivel aplicación) y cuando recibe una ruta con '_method' sobrescribe el método
-// configurado en el formulario
+
 
 const getOne = async (params) => {
-    
+    //console.log(params);
     try {
         const [rows] =  await conn.query('SELECT product.*, category.category_name, licence.licence_name FROM (product LEFT JOIN category ON product.category_category_id = category.category_id) LEFT JOIN licence ON product.licence_id = licence.licence_id WHERE ?;', params);
         const response = {
@@ -73,7 +69,7 @@ const create = async (params) => {
 
 const edit = async (id, params) => {
     try {
-        const [rows] = await conn.query('UPDATE product SET ? WHERE ?;', [id, params]);
+        const [rows] = await conn.query('UPDATE product SET ? WHERE ?;', [params, id]);
         const response = {
             isError: false,
             message: `Producto modificado exitosamente.`,
@@ -94,10 +90,13 @@ const edit = async (id, params) => {
 
 const deleteOne = async (params) => {
     try {
-        const [rows] = await conn.query('DELETE FROM product WHERE ?;', params);
+        //const [rows] = await conn.query('DELETE FROM `challenge_integrador`.`product` WHERE ?;', params);
+        await conn.query('DELETE FROM `challenge_integrador`.`product` WHERE ?;', params);
+        //DELETE FROM `challenge_integrador`.`product` WHERE (`product_id` = '18');
+        //'DELETE FROM product WHERE ?;'
         const response = {
             isError: false,
-            data: rows,
+            //data: rows,
             message: `Producto eliminado exitosamente.`
         };
         return response;
