@@ -4,6 +4,7 @@ require('dotenv').config();
 const methodOverride = require('method-override');
 const { initSession } = require('./src/utils/session');
 const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
 
 
 //const cors = require('cors');
@@ -32,6 +33,7 @@ app.use(initSession());
 /* Locals para indicar que el usuario inició sesión */
 app.use((req, res, next) => {
     res.locals.isLogged = req.session.isLogged;
+    res.locals.cart = req.session.cart;
     next();
 
 });

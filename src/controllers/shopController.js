@@ -65,33 +65,42 @@ const shopControllers = {
       },
 
     //addItem: (req, res) => res.send(`Route for add the current item to the shop cart`),
-    addItem: (req, res) => {
+    addItem: async (req, res) => {
       const product_id = req.params.id;
       //console.log(product_id);
-      const quantity = req.body; 
+      const { quantity } = req.body; 
       //console.log(quantity);
 
-      req.session.cart.push( {
-        product_id: req.params.id,
-        //image: item.image_front,
-        //product_name: item.product_name,
-        //licence_name: item.licence_name,
-        //product_description: item.product_description,
-        quantity: quantity,
-        //price: item.price
+      if (!req.session.cart) {
+        req.session.cart = [];
+      }
+
+      req.session.cart.push({ 
+        product_id: product_id, 
+        quantity: quantity 
       });
+
+      //console.log(req.session.cart)
+
+      res.redirect('/shop');
+
       
     },
 
     //cart: (req, res) => res.send('Route for the Cart View'),
-    cart: (req, res) => {
-      const items = req.session.cart;
-      console.log(items);
+    cart: async (req, res) => {
+      const cartItems = req.session.cart;
+      const {data: products} = await productServices.getAllProducts();
+      //const { products: products } = items;
+
+      //console.log(cartItems);
+      //console.log(products);
       res.render( './shop/carrito',{
         view: {
           title: "Carrito | Funkoshop"
         },
-        items
+        cartItems,
+        products
       });
 
     },
