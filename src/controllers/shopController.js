@@ -107,7 +107,15 @@ const shopControllers = {
      
 
 
-    checkout: (req, res) => res.send('Route for go to checkout page')
+  //Página para agradecer la compra
+  checkout: (req, res) => {
+    console.log("compra hecha");
+    res.render('./shop/checkout', {
+      view: {
+        title: "Gracias por su compra | Funkoshop"
+      },
+    });
+  }
 
 
 }; 

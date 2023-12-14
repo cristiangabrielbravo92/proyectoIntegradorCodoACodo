@@ -8,6 +8,7 @@ router.post('/item/:id/add', shopControllers.addItem);
 
 router.get('/cart', shopControllers.cart);
 router.post('/cart', shopControllers.checkout);
+router.get('/checkout',shopControllers.checkout);
 
 
 module.exports = router;
