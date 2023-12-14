@@ -11,7 +11,10 @@ router.get('/', mainControllers.home);
 // }, mainControllers.home);
 
 router.get('/contact', mainControllers.contact);
+router.post('/mensajeEnviado', mainControllers.enviarMensaje);
+router.get('/mensajeEnviado',mainControllers.mensajeEnviado);
 router.get('/about', mainControllers.about);
 router.get('/faqs', mainControllers.faqs);
+router.get('/page_error', mainControllers.page_error);
 
 module.exports = router;

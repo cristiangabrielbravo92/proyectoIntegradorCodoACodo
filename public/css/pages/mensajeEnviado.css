@@ -1,0 +1,34 @@
+.img_mensaje {
+    width: 250px;
+}
+
+h3 {
+    padding-bottom: 15px;
+}
+.contenedor_mensajeEnviado {
+    width: 100%;
+    padding: 8%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.texto_agradecimiento{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* responsive */
+@media screen and (max-width: 580px){
+    .contenedor_mensajeEnviado {
+        display: flex;
+        flex-direction: column;
+    }
+
+    picture {
+        margin: auto;
+    }
+}
