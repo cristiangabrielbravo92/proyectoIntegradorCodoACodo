@@ -61,3 +61,16 @@ img {
     --bs-btn-active-border-color:var(--primary-solid, 20%);
   
 }
+
+.iconify-icon {
+    color: var(--dark-bg-solid);
+    font-size: var(--font-small);
+    font-weight: 700;
+}
+
+.glide__arrow--left {
+    left: 0;
+}
+
+.glide__arrow--right{
+    right: 0; }
