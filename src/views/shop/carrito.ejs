@@ -26,6 +26,10 @@
            </div>
          </div>
        </section>  
+
+       <% let totalItems = 0 %>
+       <% let totalPrice = 0 %>
+
        <% cartItems.forEach((item, i) => { %>
         
        <section>
@@ -42,6 +46,7 @@
                        <%= products.find(product=> product.product_id == item.product_id).product_name %></h4>
                      <p class="carrito_detalle-license"><%= products.find(product=> product.product_id == item.product_id).licence_name %></p>
                      <p class="carrito_detalle-unitPrice">Precio Unitario: <%= products.find(product=> product.product_id == item.product_id).price %></p>
+                     
      
                      </p>
                    </div>
@@ -58,7 +63,7 @@
                 </div> 
                 </div>            
                <div class="col-lg-3 col-12 text-center">
-                 <div class="carrito_detalle fw-bold">$<%= products.find(product=> product.product_id == item.product_id).price %> </div>
+                 <div class="carrito_detalle fw-bold">$<%= (products.find(product=> product.product_id == item.product_id).price)*item.quantity %> </div>
                </div>
                <div class="col-lg-1 col-12">
                  <div class="carrito_detalle fw-bold">x</div>
@@ -67,6 +72,7 @@
             </div>
           </div>
         </section>  
+        
         <% }); %>
         <!-- <section>
          <div class="card shadow p-3 mb-5 border-0 rounded-4">
@@ -106,7 +112,7 @@
                          <p class="card-item__price fw-bold">CANTIDAD DE ELEMENTOS </p>
                        </div>
                        <div class="col-12 col-lg-4">
-                         <p class="card-item__price fw-bold">3</p>
+                         <p class="card-item__price fw-bold"><%= totalItems %></p>
                      
                        </div>  
                      </div>
@@ -118,7 +124,7 @@
                        </div>
                        <div class="col-12 col-lg-4">
                          <p class="card-item__price fw-bold">
-                           1598
+                           <%= totalPrice %>
                          </p>
                        </div>  
                      </div>
@@ -136,7 +142,7 @@
                          <p class="card-item__price fw-bold">TOTAL</p>
                        </div>
                        <div class="col-12 col-lg-4">
-                         <p class="card-item__price fw-bold">1598</p>
+                         <p class="card-item__price fw-bold"><%= totalPrice %></p>
                        </div>  
                      </div>
                    </div>
