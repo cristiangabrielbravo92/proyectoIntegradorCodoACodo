@@ -63,7 +63,7 @@ const quantity = document.getElementById('quantity');
 //console.log(agregar, quitar,quantity);
 
 agregar.addEventListener('click', ()=> {
-    if (quantity.value < <%= item.stock %>) { //para usar tipo de dato tinyint en la base de datos, el 255 es porque hasta el 254 se le puede agregar uno, en 255 daría 256
+    if (quantity.value < <%= item.stock %>) { //el máximo que se puede agregar desde esta vista es la cantidad disponible en stock en la base de datos
         quantity.value = Number(quantity.value) + 1;
         //console.log(quantity);
     }
