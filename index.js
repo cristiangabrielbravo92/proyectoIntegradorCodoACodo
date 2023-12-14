@@ -3,8 +3,9 @@ const app = express();
 require('dotenv').config();
 const methodOverride = require('method-override');
 const { initSession } = require('./src/utils/session');
-//const session = require('express-session');
-const session = require('cookie-session');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
+//const session = require('cookie-session');
 const path = require('path');
 
 
@@ -34,6 +35,7 @@ app.use(initSession());
 /* Locals para indicar que el usuario inició sesión */
 app.use((req, res, next) => {
     res.locals.isLogged = req.session.isLogged;
+    res.locals.cart = req.session.cart;
     next();
 
 });
