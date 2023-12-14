@@ -45,6 +45,28 @@ const getOne = async (params) => {
     }
 }
 
+const getAllByLicence = async (licence_id) => {
+    try {
+        const [rows] =  await conn.query('SELECT * FROM `product` WHERE ?;', licence_id);
+        //console.log(rows)
+        const response = {
+            isError: false,
+            data: rows
+        };
+        //console.log(response);
+        return response;
+    } catch (error) {
+        const e = {
+            isError: true,
+            message: `Error al consultar los datos: ${error}`
+        }
+        return e;
+    } finally {
+        await conn.releaseConnection();
+    }
+}
+
+
 const create = async (params) => {
     try {
         const [rows] = await conn.query('INSERT INTO product (product_name, product_description, price, stock, discount, sku, dues, image_front, image_back, licence_id, category_category_id) VALUES ?;', [params]);
@@ -113,5 +135,5 @@ const deleteOne = async (params) => {
 };
 
 module.exports = {
-    getAll, getOne, create, edit, deleteOne
+    getAll, getOne, getAllByLicence, create, edit, deleteOne
 }

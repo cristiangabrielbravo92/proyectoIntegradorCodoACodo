@@ -44,6 +44,26 @@ const shopControllers = {
         });
     },
 
+    shopFilteredByLicence: async (req, res) => {
+      const id = req.params.id;
+        //const item = await productServices.getProductByID;
+        const item = await ProductModel.getOne({product_id: id}) //acá consulta al modelo directamente porque no puede traer getProductByID como función
+        const { data } = item;
+    
+        /* if (!data[0]) {
+          return res.status(404).send('No se pudo encontrar el producto del ID seleccionado');
+        } */
+    
+        res.render('./shop/item', {
+          view: {
+            title: "Item | Funkoshop"
+          },
+          item: data[0],
+          //enableGlide: true
+        });
+
+    }
+
     //item: (req, res) => res.send(`Route for find and retrieve a product from the ID: ${req.params.id}`),
     item: async (req, res) => {
         const id = req.params.id;

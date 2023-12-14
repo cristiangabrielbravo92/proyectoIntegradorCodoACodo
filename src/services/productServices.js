@@ -8,7 +8,11 @@ const getAllProducts = async () => {
 
 const getProductById = async (id) => {
     return await ProductModel.getOne({product_id: id});
-} //este no hace falta que esté acá pero lo dejo como referencia
+} 
+
+const getProductsByLicence = async (id) => {
+  return await ProductModel.getOne({product_id: id});
+} 
 
 const createProduct = async (item, files) => {
     const itemSchema = {
@@ -53,6 +57,7 @@ const deleteProduct = async (id) => {
 module.exports = {
     getAllProducts,
     getProductById,
+    getProductsByLicence,
     create: createProduct,
     edit: editProduct,
     delete: deleteProduct
