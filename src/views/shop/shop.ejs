@@ -78,8 +78,8 @@
                 <div class="row">
             <% items.forEach( item => { %>
                 <!-- acá empieza una card -->
-                <a href="/shop/item/<%= item.product_id %>" >                  
-                  <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4">
+                    <a href="/shop/item/<%= item.product_id %>" >                  
                       <div class="card border-0">
                           <div class="d-flex justify-content-end p-2">
                             <button class="btn btn-primary rounded-0 text-white py-4 px-4">NUEVO</button>
@@ -95,8 +95,8 @@
                           </ul>
                       </div>
                   
+                    </a>
                   </div>
-                </a>
               <!-- acá termina la card -->
             <% }); %>
             
