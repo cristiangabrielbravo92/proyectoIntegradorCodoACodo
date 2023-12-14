@@ -28,7 +28,7 @@ const createProduct = async (item, files) => {
     return await ProductModel.create([Object.values(itemSchema)]);
   }
 
-const editProduct = async (id, item) => {
+const editProduct = async (item, id) => {
     const itemSchema = {
       product_name: item.name,
       product_description: item.description,
@@ -37,8 +37,8 @@ const editProduct = async (id, item) => {
       discount: item.discount,
       sku: item.sku,
       dues: item.dues,
-      image_front: '/imagen_front',
-      image_back: '/imagen_front',
+      image_front: '',
+      image_back: '',
       licence_id: item.licence,
       category_id: item.category
     }

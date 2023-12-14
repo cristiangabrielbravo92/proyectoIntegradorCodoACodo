@@ -26,8 +26,8 @@
            </div>
          </div>
        </section>  
-       <% items.forEach((product, i) => { %>
-        <%= product_id = product.product_id %>
+       <% cartItems.forEach((item, i) => { %>
+        
        <section>
          <div class="card shadow p-3 mb-5 border-0 rounded-4">
             <div class="card-body">
@@ -35,13 +35,13 @@
                 <div class="col-lg-5 col-12">
                  <div class="row">
                    <div class="carrito_detalle fw-bold col-6">
-                     <img class="carrito_detalle-previewImage" src="/img<%= product.image %>"></img>
+                     <img class="carrito_detalle-previewImage" src="/img<%= products.find(product=> product.product_id == item.product_id).image_front %>"></img>
                    </div>
                    <div class="carrito_detalle fw-bold col-6 flex">
                      <h4 class="carrito_detalle-title">
-                       <%= product.product_name %></h4>
-                     <p class="carrito_detalle-license"><%= product.licence_name %></p>
-                     <p class="carrito_detalle-unitPrice">Precio Unitario: <%= product.price %></p>
+                       <%= products.find(product=> product.product_id == item.product_id).product_name %></h4>
+                     <p class="carrito_detalle-license"><%= products.find(product=> product.product_id == item.product_id).licence_name %></p>
+                     <p class="carrito_detalle-unitPrice">Precio Unitario: <%= products.find(product=> product.product_id == item.product_id).price %></p>
      
                      </p>
                    </div>
@@ -51,14 +51,14 @@
                 </div>
                 <div class="col-lg-3 col-12 d-flex">
                 
-                     <input class="form-control"type="number" value="<%= product.quantity %>"/>
+                     <input id="quantity<%= products.find(product=> product.product_id == item.product_id).product_id %>" class="form-control"type="number" value="<%= item.quantity %>"/>
                    <div class="ms-2">
-                     <button class="btn btn-primary rounded-0 w-100 mb-1">+</button>
-                     <button class="btn btn-primary rounded-0 w-100">-</button>
+                     <a id="agregar<%= products.find(product=> product.product_id == item.product_id).product_id %>" class="btn btn-primary rounded-0 w-100 mb-1">+</a>
+                     <a id="quitar<%= products.find(product=> product.product_id == item.product_id).product_id %>" class="btn btn-primary rounded-0 w-100">-</a>
                 </div> 
                 </div>            
                <div class="col-lg-3 col-12 text-center">
-                 <div class="carrito_detalle fw-bold">$1799,99 <%= product.price %> </div>
+                 <div class="carrito_detalle fw-bold">$<%= products.find(product=> product.product_id == item.product_id).price %> </div>
                </div>
                <div class="col-lg-1 col-12">
                  <div class="carrito_detalle fw-bold">x</div>
@@ -161,5 +161,29 @@
 <!-- Fin Main -->
 <!-------------->
 
-<script src="../../../public/js/item.js"></script>
+<script>
+<% cartItems.forEach((item, i) => { %>
+
+
+<!-- <script src="../../../public/js/item.js"></script> -->
+  const agregar<%= products.find(product=> product.product_id == item.product_id).product_id %> = document.getElementById('agregar<%= products.find(product=> product.product_id == item.product_id).product_id %>');
+  const quitar<%= products.find(product=> product.product_id == item.product_id).product_id %> = document.getElementById('quitar<%= products.find(product=> product.product_id == item.product_id).product_id %>');
+  const quantity<%= products.find(product=> product.product_id == item.product_id).product_id %> = document.getElementById('quantity<%= products.find(product=> product.product_id == item.product_id).product_id %>');
+  //console.log(agregar, quitar,quantity);
+  
+  agregar<%= products.find(product=> product.product_id == item.product_id).product_id %>.addEventListener('click', ()=> {
+      if (quantity<%= products.find(product=> product.product_id == item.product_id).product_id %>.value < <%= products.find(product=> product.product_id == item.product_id).stock %>) { //para usar tipo de dato tinyint en la base de datos, el 255 es porque hasta el 254 se le puede agregar uno, en 255 daría 256
+          quantity<%= products.find(product=> product.product_id == item.product_id).product_id %>.value = Number(quantity<%= products.find(product=> product.product_id == item.product_id).product_id %>.value) + 1;
+          //console.log(quantity);
+      }
+  });
+  
+  quitar<%= products.find(product=> product.product_id == item.product_id).product_id %>.addEventListener('click', ()=> {
+      if(quantity<%= products.find(product=> product.product_id == item.product_id).product_id %>.value > 1 ){ //porque no se puede pedir una cantidad negativa
+          quantity<%= products.find(product=> product.product_id == item.product_id).product_id %>.value = Number(quantity<%= products.find(product=> product.product_id == item.product_id).product_id %>.value) -1;
+      }
+  })
+  <% }); %>
+</script>
+  
 <%- include('../partials/footer') %>

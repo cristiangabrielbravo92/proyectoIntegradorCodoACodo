@@ -2,12 +2,11 @@
 //esto es para la sesión de express-session en local, ver comentario más abajo
 const session = require('express-session'); 
 require('dotenv').config();
-
-
 const { connection } = require('../config/conn');
 const MySQLStore = require('express-mysql-session')(session);
 
 const sessionStore = new MySQLStore(connection);
+
 
 function initSession() {
   return session({

@@ -11,7 +11,7 @@ router.get('/create', isLogged, adminControllers.create);
 router.post('/create', isLogged, uploadFiles.array('images', 2), adminControllers.createItem);
 router.get('/edit/:id', isLogged, adminControllers.edit);
 router.put('/edit/:id', isLogged, adminControllers.editItem);
-router.delete('/delete/:id', isLogged, adminControllers.deleteItem);
+router.post('/delete/:id', isLogged, adminControllers.deleteItem);
 
 
 module.exports = router;

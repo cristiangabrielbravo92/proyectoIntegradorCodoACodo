@@ -8,7 +8,6 @@ const MySQLStore = require('express-mysql-session')(session);
 //const session = require('cookie-session');
 const path = require('path');
 
-
 //const cors = require('cors');
 //app.use(cors());
 

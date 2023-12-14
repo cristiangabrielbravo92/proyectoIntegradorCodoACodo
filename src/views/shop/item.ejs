@@ -22,14 +22,15 @@
           <h1 class="collection__title_item mb-3"><%= item.product_name %></h1>
           <p class="collection__text_item_item mb-3"><%= item.product_description %></p>
           <p class="collection_item_item_price"><%= item.price %></p>
-          <form action="/shop/item/:<%= item.product_id %>/add" method="POST" enctype="multipart/form-data">
+          <p class="collection_item_item_price">Stock disponible: <%= item.stock %></p>
+          <form action="/shop/item/<%= item.product_id %>/add" method="POST">
           <div class="row">
                   <div class="col-12 col-lg-4 d-flex">
-                    <input class="form-control" type="text" name="quantity" id="quantity" placeholder="0" />
+                    <input class="form-control" type="text" name="quantity" id="quantity" placeholder="1" />
                   </div>
                   <div class="col-12 col-lg-1 d-flex flex-wrap justify-content-center">
-                    <button class="btn btn-secondary rounded-0 w-100 mb-1" id="agregar">+</button>
-                    <button class="btn btn-secondary rounded-0 w-100" id="quitar">-</button>
+                    <a class="btn btn-secondary rounded-0 w-100 mb-1" id="agregar">+</a>
+                    <a class="btn btn-secondary rounded-0 w-100" id="quitar">-</a>
                   </div>
                   <div class="col-12 col-lg-7">
                     <button class="btn btn-primary rounded-0 py-3 collection_item_item__button" type="submit">Agregar al carrito</button>
@@ -54,5 +55,25 @@
 <!-------------->
 <!-- Fin Main -->
 <!-------------->
-<script src="../../../public/js/item.js"></script>
+<!-- <script src="../../public/js/item.js"></script> -->
+<script>
+const agregar = document.getElementById('agregar');
+const quitar = document.getElementById('quitar');
+const quantity = document.getElementById('quantity');
+//console.log(agregar, quitar,quantity);
+
+agregar.addEventListener('click', ()=> {
+    if (quantity.value < <%= item.stock %>) { //el máximo que se puede agregar desde esta vista es la cantidad disponible en stock en la base de datos
+        quantity.value = Number(quantity.value) + 1;
+        //console.log(quantity);
+    }
+});
+
+quitar.addEventListener('click', ()=> {
+    if(quantity.value > 1 ){ //porque no se puede pedir una cantidad negativa
+        quantity.value = Number(quantity.value) -1;
+    }
+})
+</script>
+
 <%- include('../partials/footer') %>
