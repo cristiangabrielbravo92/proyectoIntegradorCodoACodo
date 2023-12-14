@@ -3,7 +3,8 @@
 }
 
 h3 {
-    padding-bottom: 15px;
+    padding-bottom: 5px;
+    white-space: nowrap;
 }
 .contenedor_mensajeEnviado {
     width: 100%;
@@ -20,9 +21,13 @@ h3 {
     text-align: center;
 }
 
+.collection__text {
+    color: var(--dark-bg-solid) !important;
+}
+
 
 /* responsive */
-@media screen and (max-width: 580px){
+@media screen and (max-width: 1000px){
     .contenedor_mensajeEnviado {
         display: flex;
         flex-direction: column;
@@ -30,5 +35,9 @@ h3 {
 
     picture {
         margin: auto;
+    }
+
+    h3 {
+        white-space:none;
     }
 }
