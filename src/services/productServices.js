@@ -11,7 +11,7 @@ const getProductById = async (id) => {
 } 
 
 const getProductsByLicence = async (id) => {
-  return await ProductModel.getOne({product_id: id});
+  return await ProductModel.getAllByLicence({licence_id: id});
 } 
 
 const createProduct = async (item, files) => {

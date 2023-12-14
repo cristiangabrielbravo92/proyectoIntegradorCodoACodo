@@ -2,18 +2,21 @@ const { getProductById } = require('../services/productServices');
 const licenceServices = require('../services/licenceServices');
 const path = require('path');
 const contactServices = require('../services/contactServices');
+const productServices = require('../services/productServices');
 
 const mainControllers = {
 
     home: async (req, res) => {
         //console.log(req.session);
         const licences = await licenceServices.getAllItemsLicences();
+        const allProducts = await productServices.getAllProducts()
         //console.log(licences);
         res.render('home', {
             view: {
                 title: 'Home | FunkoShop'
             },
             collections: licences.data,
+            products: allProducts.data
             //enableGlide: true
 
         });

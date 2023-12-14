@@ -18,6 +18,7 @@ const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminroutes');
 const authRoutes = require('./src/routes/authRoutes');
+const { page_error } = require('./src/controllers/mainController');
 //const { notFound } = require('./src/utils/errorHandlers'); 
 
 /* -- Definición de la carpeta de archivos estáticos -- */ 
@@ -55,7 +56,7 @@ app.use('/', mainRoutes);
 app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
 app.use('/auth/', authRoutes);
-//app.use(notFound);
+app.use(page_error);
 
 
 

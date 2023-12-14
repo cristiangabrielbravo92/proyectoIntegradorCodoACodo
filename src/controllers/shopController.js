@@ -1,40 +1,13 @@
 const productServices = require('../services/productServices');
 const ProductModel = require('../models/productModel'); //acá consulta al modelo directamente porque no puede traer getProductByID como función
+const { page_error } = require('./mainController');
 
 const shopControllers = {
     //shop: (req, res) => res.send('Route for Shop View'),
     shop: async (req, res) => {
         const items = await productServices.getAllProducts();
         const { data } = items;
-        /* req.session.cart = [
-          {
-            product_id: 15,
-            image: '/img/one-piece/luffy-gear4-1.webp',
-            product_name: 'Luffy Gear 4 Snakeman',
-            licence_name: 'One Piece',
-            product_description: 'Figura coleccionable de Monkey D. Luffy',
-            quantity: 3,
-            price: 1800
-          },
-          {
-            product_id: 15,
-            image: '/img/one-piece/luffy-gear4-1.webp',
-            product_name: 'Luffy Gear 4 Snakeman',
-            licence_name: 'One Piece',
-            product_description: 'Figura coleccionable de Monkey D. Luffy',
-            quantity: 3,
-            price: 1800
-          },
-          {
-            product_id: 15,
-            image: '/img/one-piece/luffy-gear4-1.webp',
-            product_name: 'Luffy Gear 4 Snakeman',
-            licence_name: 'One Piece',
-            product_description: 'Figura coleccionable de Monkey D. Luffy',
-            quantity: 3,
-            price: 1800
-          }
-        ]; */
+        
         //console.log(req.session.cart);
         res.render( './shop/shop',{
           view: {
@@ -44,25 +17,25 @@ const shopControllers = {
         });
     },
 
-    /* shopFilteredByLicence: async (req, res) => {
+    shopFilteredByLicence: async (req, res) => {
       const id = req.params.id;
         //const item = await productServices.getProductByID;
-        const item = await ProductModel.getOne({product_id: id}) //acá consulta al modelo directamente porque no puede traer getProductByID como función
-        const { data } = item;
-    
-        /* if (!data[0]) {
-          return res.status(404).send('No se pudo encontrar el producto del ID seleccionado');
-        } */
-    
-        /*res.render('./shop/item', {
-          view: {
-            title: "Item | Funkoshop"
-          },
-          item: data[0],
-          //enableGlide: true
-        });
+      const products = await ProductModel.getAllByLicence({licence_id: id}); //acá consulta al modelo directamente porque no puede traer getProductByID como función
 
-    } */
+      const { data: items } = products;
+
+      //console.log(data)
+      res.render('./shop/shop', {
+        view: {
+          title: "Shop | Funkoshop"
+        },
+        items,
+        
+        
+      });
+      
+
+    },
 
     //item: (req, res) => res.send(`Route for find and retrieve a product from the ID: ${req.params.id}`),
     item: async (req, res) => {
@@ -70,17 +43,20 @@ const shopControllers = {
         //const item = await productServices.getProductByID;
         const item = await ProductModel.getOne({product_id: id}) //acá consulta al modelo directamente porque no puede traer getProductByID como función
         const { data } = item;
+
+        const allProducts = await productServices.getAllProducts()
     
-        /* if (!data[0]) {
-          return res.status(404).send('No se pudo encontrar el producto del ID seleccionado');
-        } */
+        if (!data[0]) {
+          return res.render(page_error);
+        } 
     
         res.render('./shop/item', {
           view: {
             title: "Item | Funkoshop"
           },
           item: data[0],
-          //enableGlide: true
+          products: allProducts.data
+          
         });
       },
 

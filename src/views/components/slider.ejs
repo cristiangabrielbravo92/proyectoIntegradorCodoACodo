@@ -5,34 +5,35 @@
     <h2 class="slider__title">Últimos Lanzamientos-</h2>
     <div class="glide__track" data-glide-el="track">
         <ul class="slider__items glide__slides">
+            <% products.forEach(function(item) { %>
             <li class="slider__item glide__slide">
             <article class="card-item">
                 <a class="card-item__link" href="">
                     <picture class="card-item__cover">
                         <span class="card-item__tag">Nuevo</span>
                         <!-- esta imagen esta visible hasta que se haga hover -->
-                        <img  class="card-item__img--front" src="./img/star-wars/trooper-1.webp" alt="Figura coleccionable Funko de un Stormtrooper">
+                        <img  class="card-item__img--front" src="/img<%= item.image_front %>" alt="<%= item.description  %>">
                          <!-- esta imagen está oculta hasta que se haga hover -->
-                        <img  class="card-item__img--back" src="./img/star-wars/trooper-box.webp" alt="Figura coleccionable Funko de un Stormtrooper en caja">
+                        <img  class="card-item__img--back" src="/img<%= item.image_back %>" alt="<%= item.description  %>">
                         
                     </picture>
                     <div class="card-item__content">
-                        <p class="card-item__license">STAR WARS</p>
-                        <h4 class="card-item__name">STORMTROOPER LIGHTSABER</h4>
-                        <p class="card-item__price">$ 1799,99</p>
-                        <p class="card-item__promo">3 CUOTAS SIN INTERÉS</p>
+                        <p class="card-item__license"><%= item.licence_name %></p>
+                        <h4 class="card-item__name"><%= item.product_name %></h4>
+                        <p class="card-item__price">$ <%= item.price %></p>
+                        <p class="card-item__promo"><%= item.dues %> CUOTAS SIN INTERÉS</p>
                     </div>
                 </a>
             </article>
             </li>
-            <li class="slider__item glide__slide">
+            <!-- <li class="slider__item glide__slide">
             <article class="card-item">
                 <a class="card-item__link" href="">
                     <picture class="card-item__cover">
                         <span class="card-item__tag">Nuevo</span>
-                        <!-- esta imagen esta visible hasta que se haga hover -->
+                        esta imagen esta visible hasta que se haga hover
                         <img  class="card-item__img--front" src="./img/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funko de Pidgeotto"> 
-                        <!-- esta imagen está oculta hasta que se haga hover -->
+                        esta imagen está oculta hasta que se haga hover 
                         <img  class="card-item__img--back" src="./img/pokemon/pidgeotto-box.webp" alt="Figura coleccionable Funko de Pidgeotto en caja"> 
                     </picture>
                     <div class="card-item__content">
@@ -43,15 +44,15 @@
                     </div>
                 </a>
             </article>
-            </li>
-            <li class="slider__item glide__slide">
+            </li> -->
+            <!-- <li class="slider__item glide__slide">
             <article class="card-item">
                 <a class="card-item__link" href="">
                     <picture class="card-item__cover">
                         <span class="card-item__tag">Nuevo</span>
-                        <!-- esta imagen esta visible hasta que se haga hover -->
+                        esta imagen esta visible hasta que se haga hover
                         <img class="card-item__img--front" src="./img/harry-potter/luna-1.webp" alt="Figura coleccionable Funko de Luna Lovegood">
-                         <!-- esta imagen está oculta hasta que se haga hover -->
+                         esta imagen está oculta hasta que se haga hover
                         <img class="card-item__img--back"  src="./img/harry-potter/luna-box.webp" alt="Figura coleccionable Funko de Luna Lovegood en caja">
                     </picture>
                     <div class="card-item__content">
@@ -62,7 +63,8 @@
                     </div>
                 </a>
             </article>
-            </li>
+            </li> -->
+            <% }); %>
         </ul>
     </div>
     <div class="glide__arrows" data-glide-el="controls">

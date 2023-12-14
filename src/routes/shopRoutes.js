@@ -8,6 +8,8 @@ router.get('/item/:id', shopControllers.item);
 
 router.post('/item/:id/add', shopControllers.addItem);
 
+router.get('/licence/:id', shopControllers.shopFilteredByLicence)
+
 router.get('/cart', shopControllers.cart);
 router.post('/cart', shopControllers.checkout);
 router.get('/checkout',shopControllers.checkout);

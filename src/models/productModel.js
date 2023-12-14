@@ -45,9 +45,9 @@ const getOne = async (params) => {
     }
 }
 
-const getAllByLicence = async (licence_id) => {
+const getAllByLicence = async (params) => {
     try {
-        const [rows] =  await conn.query('SELECT * FROM `product` WHERE ?;', licence_id);
+        const [rows] =  await conn.query('SELECT * FROM `product` WHERE ?;', params);
         //console.log(rows)
         const response = {
             isError: false,
