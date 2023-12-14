@@ -4,7 +4,7 @@ const shopControllers = require('../controllers/shopController');
 
 router.get('/', shopControllers.shop);
 router.get('/item/:id', shopControllers.item);
-router.get('/items/', mainController.getShopByItems); // para usar el filtro usamos queryparams
+//router.get('/items/', mainController.getShopByItems); // para usar el filtro usamos queryparams
 
 router.post('/item/:id/add', shopControllers.addItem);
 
