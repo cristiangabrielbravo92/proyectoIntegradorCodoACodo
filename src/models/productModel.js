@@ -113,9 +113,8 @@ const edit = async (id, params) => {
 const deleteOne = async (params) => {
     try {
         //const [rows] = await conn.query('DELETE FROM `challenge_integrador`.`product` WHERE ?;', params);
-        await conn.query('DELETE FROM `challenge_integrador`.`product` WHERE ?;', params);
-        //DELETE FROM `challenge_integrador`.`product` WHERE (`product_id` = '18');
-        //'DELETE FROM product WHERE ?;'
+        //await conn.query('DELETE FROM `challenge_integrador`.`product` WHERE ?;', params);
+        await conn.query('DELETE FROM `product` WHERE `product`.?;', params);
         const response = {
             isError: false,
             //data: rows,
